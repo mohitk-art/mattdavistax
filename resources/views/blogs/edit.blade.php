@@ -1,19 +1,14 @@
 @extends('back_layouts.app')
 
 @section('content')
-<div class="content">
-    <div class="container-fluid">
-
-    <div class="row">
-        <div class="col-lg-12 margin-tb">
-            <div class="pull-left">
-                <h2>Edit blog</h2>
-            </div>
-            <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('blogs.index') }}"> Back</a>
-            </div>
-        </div>
-    </div>
+<div class="card p-4 mb-0">
+    <h3 class="d-flex align-items-center justify-content-between">
+        Edit blog
+        <a class="btn btn-primary" href="{{ route('blogs.index') }}"> Back</a>
+    </h3>
+      
+                
+            
 
     @if ($errors->any())
         <div class="alert alert-danger">
@@ -26,45 +21,45 @@
         </div>
     @endif
 
-    <form action="{{ route('blogs.update',$blog->id) }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('blogs.update',$blog->id) }}" class="form-row" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
 
-         <div class="row">
+        
+                    <div class="col-md-6">
+                        <label>Blog Images</label>
+
+                        <div>
+                            <label class="btn btn-primary">
+                                <input type="file" name="file" class="d-none" id="profile-img">
+                                Upload Image
+                            </label>
+                        </div>
+                            
+                    </div>
+
+                    <div class="col-md-6">
+                        @if($blog->image != null)
+                            <img src="{{ url('images/',$blog->image) }}" class="blog-thumbnail" id="profile-img-tag" />
+                        @else
+                            <img src="{{ url('images/No-image-available-2.jpg') }}" class="blog-thumbnail" id="profile-img-tag" />
+                        @endif
+                    </div>
+                
             <div class="col-md-12">
-                <div class="form-group">
-                    <div class="col-lg-6"><br><label>
-                        Blog Images</label><input type="file" name="file" class="form-control" id="profile-img">
-                        </div>
-                        <div class="col-lg-6">
-                            @if($blog->image != null)
-                            <img src="{{ url('images/',$blog->image) }}" class="img-thumbnail" id="profile-img-tag"  style="height:300px !important">
-                            @else
-                            <img src="{{ url('images/No-image-available-2.jpg') }}" class="img-thumbnail" id="profile-img-tag"  style="height:300px !important">
-                            @endif
-                               {{-- <img src="{{ url('images/No-image-available-2.jpg') }}" class="img-thumbnail" id="profile-img-tag" width="200" style="height:150px !important"> --}}
+                <label>Title:</label>
+                <input type="text" name="title" value="{{ $blog->title }}" class="form-control">
+            </div>
+            <div class="col-md-12">
+                <label>Description:</label>
+                <textarea class="form-control" style="height:150px" name="description">{{ $blog->description }}</textarea>
+            </div>
 
-
-                        </div>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>Title:</strong>
-                    <input type="text" name="title" value="{{ $blog->title }}" class="form-control" placeholder="title">
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>Description:</strong>
-                    <textarea class="form-control" style="height:150px" name="description" placeholder="Enter Description">{{ $blog->description }}</textarea>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+            <div class="text-right col-md-12">
               <button type="submit" class="btn btn-primary">Submit</button>
             </div>
-        </div>
+        
 
     </form>
-    </div></div>
+    </div>
 @endsection

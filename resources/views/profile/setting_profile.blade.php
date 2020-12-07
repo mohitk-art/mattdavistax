@@ -1,16 +1,17 @@
 @extends('back_layouts.app')
 @section('content')
 
-<div class="content">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-12">
+
+            <div class="card p-4 mb-0">
             @include('error_message')
-                <button class="tablink" onclick="openPage('Home', this, '#4CAF50')" id="defaultOpen">Your Information</button>
-                <button class="tablink" onclick="openPage('Income', this, '#4CAF50')">Income</button>
-                <button class="tablink" onclick="openPage('Deductions', this, '#4CAF50')" >Deductions</button>
-                <button class="tablink" onclick="openPage('Credits', this, '#4CAF50')" >Credits</button>
-                <button class="tablink" onclick="openPage('About', this, '#4CAF50')">About</button>
+
+                <div class="d-flex ">
+                    <button class="tablink" onclick="openPage('Home', this, '#4CAF50')" id="defaultOpen">Your Information</button>
+                    <button class="tablink" onclick="openPage('Income', this, '#4CAF50')">Income</button>
+                    <button class="tablink" onclick="openPage('Deductions', this, '#4CAF50')" >Deductions</button>
+                    <button class="tablink" onclick="openPage('Credits', this, '#4CAF50')" >Credits</button>
+                    <button class="tablink" onclick="openPage('About', this, '#4CAF50')">About</button>
+                </div>
 
                 <div id="Home" class="tabcontent">
                             <div class="tab">
@@ -24,8 +25,7 @@
                             <form id="regForm" action="{{url('your_household',$users->id)}}" method="POST">
                                 <!-- One "tab" for each step in the form: -->
                                 <div class="tab2">
-                                    <br><br><br>
-                                <div oninput="this.className = ''">
+                                <div class="form-row" oninput="this.className = ''">
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                          <label for="inp1">Full Name</label>
@@ -69,7 +69,7 @@
 
 
                                     </div>
-                                    <div style="margin-top: 25%"></div>
+                                    
                                 </div>
 
                                 <div class="tab2 next_question">
@@ -236,14 +236,13 @@
                                 </div>
 
 
-                                <div style="overflow:auto;">
-                                <div style="margin-top: 10%;text-align: center;">
-                                    <button type="button" class="prevBtn" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
-                                    <button type="button" class="nextBtn" id="nextBtn" onclick="nextPrev(1)">Next</button>
+                                <div class="text-center">
+                                    <button type="button" class="btn btn-secondary mr-2" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+                                    <button type="button" class="btn btn-primary" id="nextBtn" onclick="nextPrev(1)">Next</button>
                                 </div>
-                                </div>
+                                
                                 <!-- Circles which indicates the steps of the form: -->
-                                <div style="text-align:center;margin-top:40px;">
+                                <div class="text-center mt-4">
                                 <span class="step"></span>
                                 <span class="step"></span>
                                 <span class="step"></span>
@@ -266,14 +265,15 @@
 
 
 
-                            <div id="Address" class="tabcontent2">
-                                <center>
-                                <form action="{{url('post_address',$users->id)}}" method="POST">
-                                    <img src="https://taxes.hrblock.com/HRBlock/Templates/Premium/Images/PI/Address.svg" style="
-                                    height: 104px;">
-                                 <h3 class="title"> What's your current address?</h3>
+                            <div id="Address" class="tabcontent2 p-6">
+                                <form class="form-row" action="{{url('post_address',$users->id)}}" method="POST">
 
-                                 <div style="margin-top: 5%"></div>
+                                <div class="text-center col-md-12 mb-5">
+                                <img src="https://taxes.hrblock.com/HRBlock/Templates/Premium/Images/PI/Address.svg" style="
+                                    height: 104px;">
+                                 <h3> What's your current address?</h3>
+                                </div>
+                                
 
                                  <div class="col-sm-8">
                                     <div class="form-group">
@@ -310,15 +310,17 @@
                                     </div>
                                    </div>
 
-                                   <button type="submit" name="submit" value="Submit" class="nextBtn">Submit</button>
+                                   <div class="text-right">
+                                        <button type="submit" name="submit" value="Submit" class="btn btn-primary">Submit</button>
+                                    </div>
 
-                                   <div style="margin-top: 5%"></div>
+                                
                                 </form>
-                            </center>
+                            
                             </div>
 
                             <div id="Summary" class="tabcontent2">
-                                <center>
+                                <center class="p-6">
                                     <h3 class="title">We've enjoyed getting to know you, himahh!</h3>
                                     <span class="sub_litle">Here's everything you've told us so far.</span>
 
@@ -352,33 +354,40 @@
                         <button class="tablinks2" onclick="openCity(event, 'Uploaded_document')">Summary</button>
                     </div>
 
-                    <div id="upload_document" class="tabcontent2">
-                    <center>
-                        <h3 class="title"> Now, let’s upload your FORM 1098</h3>
-                        <span class="sub_litle">Drag and drop all of your 1098s into the box below (or click to upload).</span></center>
+                    <div id="upload_document" class="tabcontent2 p-6 text-center">
+                    
+                        <h3>Now, let’s upload your FORM 1098</h3>
+                        <div class="sub_litle mb-4">Drag and drop all of your 1098s into the box below (or click to upload).</div>
                         <form action="{{ route('users.deductionDocument',0) }}" method="POST" enctype="multipart/form-data" class="dropzone" id='image-upload'>
                             @csrf
                             <input type="hidden" value="{{$users->id}}" name="userId">
                         </form>
-                    </center>
+                    
                     </div>
-                    <div id="Uploaded_document" class="tabcontent2">
-                        Here is All Deduction Upload Document List:
-                        <br> <br> <br> <br>
+                    <div id="Uploaded_document" class="tabcontent2 p-6">
+                        <div class="mb-4">Here is All Deduction Upload Document List:</div>
+                        
+
                          @if(count($userDocuments) > 0)
+                            <div class="form-row images-row">
                             @foreach($userDocuments as $userDocument)
-                            <div class="col-sm-4">
+                            
                                 @if($userDocument->document_name == "Deductions")
+                                <div class="col-sm-3">
                                     @if($userDocument->document_type =='pdf')
-                                    <i class="fa fa-file-pdf-o" aria-hidden="true" style="display: unset;"><a href="{{ url('deduction_documents',$userDocument->document_url) }}" target="_blank" class="view_pdf"/>View Pdf</a></i>
+                                    <a class="pdf" href="{{ url('deduction_documents',$userDocument->document_url) }}" target="_blank">    
+                                        <i class="fa fa-file-pdf-o"></i>
+                                    </a>
                                     @else
-                                        <img src="{{ url('deduction_documents',$userDocument->document_url) }}" style="height:100px" class="view_document">
+                                        <img src="{{ url('deduction_documents',$userDocument->document_url) }}" class="img"/>
                                     @endif
+
+                                </div>
                                 @endif
-                            </div>
                             @endforeach
+                            </div>
                          @endif
-                         <div style="margin-top: 20%"></div>
+                         
                     </div>
                 </div>
 
@@ -387,34 +396,39 @@
                         <button class="tablinks2 active" onclick="openCity(event, 'upload_income')" id="defaultOpen3">Upload Income Document</button>
                         <button class="tablinks2" onclick="openCity(event, 'income_document')">Summary</button>
                     </div>
-                    <div id="upload_income" class="tabcontent2">
-                        <center>
-                            <h3 class="title"> Now, let’s upload your Income Document</h3>
-                            <span class="sub_litle">Drag and drop all of your Income.</span></center>
+                    <div id="upload_income" class="tabcontent2 p-6 text-center">
+                            <h3> Now, let’s upload your Income Document</h3>
+                            <div class="sub_litle mb-4">Drag and drop all of your Income.</div>
                             <form action="{{ route('users.deductionDocument',1) }}" method="POST" enctype="multipart/form-data" class="dropzone" id='image-upload'>
                                 @csrf
                             <input type="hidden" value="{{$users->id}}" name="userId">
                             </form>
-                        </center>
+                        
                     </div>
 
-                    <div id="income_document" class="tabcontent2">
-                        Here is All Deduction Upload Document List:
-                        <br> <br> <br> <br>
+                    <div id="income_document" class="tabcontent2 p-6">
+                        <div class="mb-3">Here is All Deduction Upload Document List:</div>
+                        
                          @if(count($userDocuments) > 0)
+
+                            <div class="form-row images-row">
                             @foreach($userDocuments as $userDocument)
-                            <div class="col-sm-4">
+                            
                                 @if($userDocument->document_name == "Income")
+                                <div class="col-sm-3">
                                     @if($userDocument->document_type =='pdf')
-                                    <i class="fa fa-file-pdf-o" aria-hidden="true" style="display: unset;"><a href="{{ url('income_documents',$userDocument->document_url) }}" target="_blank"/>View Pdf</a></i>
+                                    <a class="pdf" href="{{ url('income_documents',$userDocument->document_url) }}" target="_blank">    
+                                        <i class="fa fa-file-pdf-o"></i>
+                                    </a>
                                     @else
-                                        <img src="{{ url('income_documents',$userDocument->document_url) }}" style="height:100px">
+                                        <img src="{{ url('income_documents',$userDocument->document_url) }}" class="img">
                                     @endif
+                                </div>
                                 @endif
-                            </div>
+                            
                             @endforeach
+                            </div>
                          @endif
-                       <div style="margin-top: 20%"></div>
 
                     </div>
                 </div>
@@ -425,34 +439,40 @@
                         <button class="tablinks2" onclick="openCity(event, 'upload_credits')">Upload Credits Document</button>
                         <button class="tablinks2" onclick="openCity(event, 'credits_document')">Summary</button>
                     </div>
-                    <div id="upload_credits" class="tabcontent2">
-                        <center>
-                            <h3 class="title">1098-T Tuition and expenses for college and other higher education</h3>
-                          </center>
+                    <div id="upload_credits" class="tabcontent2 p-6 text-center">
+                        
+                            <h3>1098-T Tuition and expenses for college and other higher education</h3>
+                        
                             <form action="{{ route('users.deductionDocument',2) }}" method="POST" enctype="multipart/form-data" class="dropzone" id='image-upload'>
                                 @csrf
                             <input type="hidden" value="{{$users->id}}" name="userId">
                             </form>
-                        </center>
+                        
                     </div>
 
-                    <div id="credits_document" class="tabcontent2">
-                        Here is All Deduction Upload Document List:
-                        <br> <br> <br> <br>
+                    <div id="credits_document" class="tabcontent2 p-6">
+                        <div class="mb-4">Here is All Deduction Upload Document List:</div>
+                        
                          @if(count($userDocuments) > 0)
+                            <div class="form-row images-row">
                             @foreach($userDocuments as $userDocument)
-                            <div class="col-sm-4">
+                            
                                 @if($userDocument->document_name == "Credits")
+                                <div class="col-sm-3">
                                     @if($userDocument->document_type =='pdf')
-                                    <i class="fa fa-file-pdf-o" aria-hidden="true" style="display: unset;"><a href="{{ url('credit_documents',$userDocument->document_url) }}" target="_blank"/>View Pdf</a></i>
+                                    
+                                    <a class="pdf" href="{{ url('credit_documents',$userDocument->document_url) }}" target="_blank">    
+                                    <i class="fa fa-file-pdf-o"></i>
+                                    </a>
+                                    
                                     @else
-                                        <img src="{{ url('credit_documents',$userDocument->document_url) }}" style="height:100px">
+                                        <img src="{{ url('credit_documents',$userDocument->document_url) }}" class="img" />
                                     @endif
+                                </div>
                                 @endif
-                            </div>
                             @endforeach
+                            </div>
                          @endif
-                       <div style="margin-top: 20%"></div>
 
                     </div>
                 </div>
@@ -465,9 +485,7 @@
 
 
             </div>
-        </div>
-    </div>
-</div>
+        
 @endsection
 
 

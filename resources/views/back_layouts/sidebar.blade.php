@@ -23,12 +23,12 @@
             </a>
         </div>
         <ul class="nav">
-            <li>
+            <!-- <li>
                 <a href="{{ url('/') }}">
                     <i class="pe-7s-home"></i>
                     <p>Home </p>
                 </a>
-            </li>
+            </li> -->
 
             @can('permissions')
             <li class="{{ (request()->is('permissions')) ? 'active' : '' }}">
@@ -77,20 +77,15 @@
                 </li>
             @endcan
 
-            <li>
+            <!-- <li>
             <a href="{{url('chat')}}">
                     <i class="pe-7s-bell"></i>
                     <p>Chat</p>
                 </a>
-            </li>
+            </li> -->
 
 
-                {{-- <li class="{{ (request()->is('dashboard')) ? 'active' : '' }}">
-                    <a href="{{url('/dashboard')}}">
-                        <i class="pe-7s-graph"></i>
-                        <p>Dashboard</p>
-                    </a>
-                </li> --}}
+               
 
 
             <li class="active-pro">

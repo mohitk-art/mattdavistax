@@ -81,7 +81,7 @@
  <!--/about-w3layouts-agile-info-->
 <div class="about-w3layouts-agileinfo">
 	<div class="container">
-		<div class="about-top w3ls-agile">
+		<div class="about-top w3ls-agile row align-items-center">
 			<div class="col-md-6 red-w3l">
 				<div class="red-w3l-images">
 					<img class="img-responsive" src="{{ url('fornt/images/ab.jpg') }}" alt="">
@@ -97,7 +97,9 @@
 				</div>
 				<div class="steps-wel">
 					<h5>Follow Us For Easy Steps</h5>
-					<div class="col-md-3 col-sm-3 col-xs-3 w3ls_banner_bottom_grids first-posi-w3l">
+
+					<div class="row">
+					<div class="col-3 w3ls_banner_bottom_grids first-posi-w3l">
 						<div class="w3l_banner_bottom_grid1">
 						    <i class="fa fa-laptop hvr-pulse-shrink" aria-hidden="true"></i>
 						</div>
@@ -108,16 +110,21 @@
 						   <i class="fa fa-paint-brush hvr-pulse-shrink" aria-hidden="true"></i>
 						</div>
 					</div>
-					<div class="col-md-2 col-sm-2 col-xs-2 w3ls_banner_bottom_grids">
+
+					<div class="col-2 col-xs-2 w3ls_banner_bottom_grids">
 						<h6>01</h6>
 						<h6>02</h6>
 						<h6>03</h6>
 					</div>
-					<div class="col-md-7 col-sm-7 col-xs-7 w3ls_banner_bottom_grids">
+					<div class="col-7 w3ls_banner_bottom_grids">
 						<p>Digital</p>
 						<p>Branding</p>
 						<p>Illustration</p>
 					</div>
+					</div>
+					
+					
+					
 					<div class="clearfix"> </div>
 				</div>
 			</div>
@@ -129,7 +136,7 @@
 <!-- stats -->
 <div class="stats" id="stats">
 	    <div class="container">
-			<div class="inner_w3l_agile_grids">
+			<div class="inner_w3l_agile_grids row">
 		<div class="col-md-3 w3layouts_stats_left w3_counter_grid">
 		   	<i class="fa fa-laptop" aria-hidden="true"></i>
 			<p class="counter">45</p>
@@ -161,6 +168,10 @@
  <div class="tittle-agileinfo">
 			<h3 class="title-w3-agileits">Our Services</h3>
 			</div>
+
+
+<div class="row mx-0">
+
 	<div class="col-md-4 col-sm-4 agileits_banner_bottom_left">
 		<div class="agileinfo_banner_bottom_pos">
 			<div class="w3_agileits_banner_bottom_pos_grid">
@@ -209,6 +220,7 @@
 			</div>
 		</div>
 	</div>
+
 		<div class="col-md-4 col-sm-4 agileits_banner_bottom_left">
 		<div class="agileinfo_banner_bottom_pos">
 			<div class="w3_agileits_banner_bottom_pos_grid">
@@ -257,6 +269,9 @@
 			</div>
 		</div>
 	</div>
+
+</div>
+
 	<div class="clearfix"> </div>
 </div>
 <!-- //banner-bottom -->
@@ -266,7 +281,7 @@
 		 <div class="tittle-agileinfo">
 			<h3 class="title-w3-agileits">Our Blog</h3>
 			</div>
-			<div class="col-md-6 w3ls_banner_bottom_right">
+			<div class="w3ls_banner_bottom_right">
 				<section class="slider">
 					<div class="flexslider">
 						<ul class="slides">

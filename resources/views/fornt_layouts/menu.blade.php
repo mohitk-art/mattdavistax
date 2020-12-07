@@ -9,23 +9,22 @@
         </svg>
     </div>
     <div class="top_header_agile_info_w3ls">
-      <nav class="navbar navbar-default">
-            <div class="navbar-header navbar-left">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
+      <nav class="navbar navbar-default navbar-expand-lg navbar-dark">
+            <div class="navbar-header d-flex align-items-center justify-content-between">
+                
                 <a class="navbar-brand" href="{{url('/')}}"><img src="https://www.mattdavistaxservice.com/uploads/1/2/9/9/129999372/published/matt-davis-tax-service-logo.jpg?1576013841" style="height: 55px"></a>
+
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-controls="bs-example-navbar-collapse-1" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-                <div id="m_nav_container" class="m_nav wthree_bg">
+                <div id="m_nav_container" class="m_nav wthree_bg ml-auto">
                     <nav class="menu menu--sebastian">
                         <ul id="m_nav_list" class="m_nav menu__list">
-                            <li class="m_nav_item active" id="m_nav_item_1"> <a href="{{url('/')}}" class="link link--kumya"><i class="fa fa-home" aria-hidden="true"></i>Home</a></li>
+                            <li class="m_nav_item" id="m_nav_item_1"> <a href="{{url('/')}}" class="link link--kumya"><i class="fa fa-home" aria-hidden="true"></i>Home</a></li>
                             <li class="m_nav_item" id="m_nav_item_1"> <a href="{{url('/guarantee')}}" class="link link--kumya"><i class="fa fa-check" aria-hidden="true"></i>Guarantee</a></li>
 
                             <li class="m_nav_item" id="moble_nav_item_3"> <a href="{{url('/services')}}" class="link link--kumya"><i class="fa fa-server" aria-hidden="true"></i>Service</a></li>

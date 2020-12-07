@@ -7,8 +7,8 @@
 <meta name="keywords" content="Decline Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
 Smartphone Compatible web template, free web designs for Nokia, Samsung, LG,sonyEricsson, Motorola web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<link href="{{ url('fornt/css/bootstrap.css') }}" rel='stylesheet' type='text/css' />
-
+<!-- <link href="{{ url('fornt/css/bootstrap.css') }}" rel='stylesheet' type='text/css' /> -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 
 <link href='//fonts.googleapis.com/css?family=Abril+Fatface' rel='stylesheet' type='text/css'>
 <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,600,600i,700,700i,800" rel="stylesheet">
@@ -17,7 +17,10 @@ Smartphone Compatible web template, free web designs for Nokia, Samsung, LG,sony
 <link href="{{ url('fornt/css/font-awesome.css') }}" rel="stylesheet">
 <link rel="stylesheet" href="{{ url('fornt/css/flexslider.css') }}" type="text/css" media="screen" property="" /><!--Blog slider-->
 <link rel="stylesheet" href="{{ url('fornt/css/slider.css') }}">
+<link href="{{ url('fornt/css/color.css') }}" rel='stylesheet' type='text/css' />
 <link href="{{ url('fornt/css/style.css') }}" rel='stylesheet' type='text/css' />
+<link href="{{ url('fornt/css/main.css') }}" rel='stylesheet' type='text/css' />
+<link href="{{ url('fornt/css/responsive.css') }}" rel='stylesheet' type='text/css' media="(max-width:991px)" />
 </head>
 	<body>
         @include('fornt_layouts.menu')
@@ -107,6 +110,9 @@ Smartphone Compatible web template, free web designs for Nokia, Samsung, LG,sony
 		<a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
 <!-- for bootstrap working -->
 		<script src="{{ url('fornt/js/bootstrap.js') }}"></script>
+
+		<!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script> -->
 <!-- //for bootstrap working -->
 </body>
 </html>

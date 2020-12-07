@@ -2,19 +2,11 @@
 
 @section('content')
 
-<div class="content">
-    <div class="container-fluid">
-<div class="row">
-    <div class="col-lg-12 margin-tb">
-        <div class="pull-left">
-            <h2>Create New Role</h2>
-        </div>
-        <div class="pull-right">
-            <a class="btn btn-primary" href="{{ route('roles.index') }}"> Back</a>
-        </div>
-    </div>
-</div>
-
+<div class="card p-4 mb-0">
+    <h3 class="d-flex align-items-center justify-content-between">
+        Create New Role
+        <a class="btn btn-primary" href="{{ route('roles.index') }}"> Back</a>
+    </h3>
 
 @if (count($errors) > 0)
     <div class="alert alert-danger">
@@ -29,30 +21,29 @@
 
 
 {!! Form::open(array('route' => 'roles.store','method'=>'POST')) !!}
-<div class="row">
-    <div class="col-xs-12 col-sm-12 col-md-12">
+
         <div class="form-group">
-            <strong>Name:</strong>
-            {!! Form::text('name', null, array('placeholder' => 'Name','class' => 'form-control')) !!}
+            <label>Name:</label>
+            {!! Form::text('name', null, array('placeholder' => '','class' => 'form-control')) !!}
         </div>
-    </div>
-    <div class="col-xs-12 col-sm-12 col-md-12">
+ 
         <div class="form-group">
-            <strong>Permission:</strong>
-            <br/>
+            <label>Permission:</label>
+            
+            <div class="form-row">
             @foreach($permission as $value)
-                <label>{{ Form::checkbox('permission[]', $value->id, false, array('class' => 'name')) }}
-                {{ $value->name }}</label>
-            <br/>
+            <label class="checks-control col-md-3">
+                {{ Form::checkbox('permission[]', $value->id, false, array('class' => 'name')) }}
+                {{ $value->name }}
+            </label>
             @endforeach
+            </div>
         </div>
-    </div>
-    <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+ 
+    <div class="text-right">
         <button type="submit" class="btn btn-primary">Submit</button>
     </div>
-</div>
 {!! Form::close() !!}
-</div>
 </div>
 
 @endsection

@@ -1,23 +1,11 @@
 
 <!-- footer -->
 <div class="footer">
-    <div class="social-agileinfo">
-    <a href="#" class="social-icon-w3-agile facebook">
-        <i class="fa fa-facebook" aria-hidden="true"></i>
-    </a>
-    <a href="#" class="social-icon-w3-agile google-plus">
-        <i class="fa fa-google-plus" aria-hidden="true"></i>
-    </a>
-    <a href="#" class="social-icon-w3-agile twitter">
-        <i class="fa fa-twitter" aria-hidden="true"></i>
-    </a>
-    <a href="#" class="social-icon-w3-agile rss">
-        <i class="fa fa-rss" aria-hidden="true"></i>
-    </a>
-    <div class="clearfix"></div>
-</div>
+    
     <div class="agileinfo_footer_bottom">
-        <div class="container">
+
+    <div class="container">
+        <div class="row">
             <div class="col-md-3 agileinfo_footer_bottom_grid">
                 <h2>About <span>Us</span></h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
@@ -38,27 +26,12 @@
                 </ul>
             </div>
             <div class="col-md-3 agileinfo_footer_bottom_grid">
-                <h3>The <span>Tags</span></h3>
+                <h3>Usefull <span>Links</span></h3>
                 <div class="unorder">
                     <ul class="tag2 tag_agileinfo">
-                        <li><a href="#">Tag 1</a></li>
-                        <li><a href="#">Tag 2</a></li>
-                        <li><a href="#">Tag 3</a></li>
-                    </ul>
-                    <ul class="tag2 tag_agileinfo">
-                        <li><a href="#">Tag 4</a></li>
-                        <li><a href="#">Tag 5</a></li>
-                        <li><a href="#">Tag 6</a></li>
-                    </ul>
-                    <ul class="tag2 tag_agileinfo">
-                        <li><a href="#">Tag 7</a></li>
-                        <li><a href="#">Tag 8</a></li>
-                        <li><a href="#">Tag 1</a></li>
-                    </ul>
-                    <ul class="tag2 tag_agileinfo">
-                        <li><a href="#">Tag 1</a></li>
-                        <li><a href="#">Tag 2</a></li>
-                        <li><a href="#">Tag 3</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Service</a></li>
                     </ul>
                 </div>
             </div>
@@ -72,33 +45,26 @@
                 </ul>
             </div>
             <div class="col-md-3 agileinfo_footer_bottom_grid">
-                <h3>Flickr <span>Feed</span></h3>
-                <div class="flickr-grids">
-                    <div class="flickr-grid agileits_w3layouts_flickr">
-                        <a href="#"><img src="{{ url('fornt/images/s1.jpg') }}" alt=" " class="img-responsive" /></a>
-                    </div>
-                    <div class="flickr-grid  agileits_w3layouts_flickr">
-                        <a href="#"><img src="{{ url('fornt/images/s2.jpg') }}" alt=" " class="img-responsive" /></a>
-                    </div>
-                    <div class="flickr-grid  agileits_w3layouts_flickr">
-                        <a href="#"><img src="{{ url('fornt/images/s3.jpg') }}" alt=" " class="img-responsive" /></a>
-                    </div>
-                    <div class="clearfix"> </div>
+                <h3>Contact <span>Us</span></h3>
+                <ul class="icons-links text-white">
+                    <li>
+                        <i class="fa fa-map-marker"></i> 360 W Wellington Chicago, IL 60657
+                    </li>
 
-                    <div class="flickr-grid  agileits_w3layouts_flickr">
-                        <a href="#"><img src="{{ url('fornt/images/s4.jpg') }}" alt=" " class="img-responsive" /></a>
-                    </div>
-                    <div class="flickr-grid  agileits_w3layouts_flickr">
-                        <a href="#"><img src="{{ url('fornt/images/s4.jpg') }}" alt=" " class="img-responsive" /></a>
-                    </div>
-                    <div class="flickr-grid  agileits_w3layouts_flickr">
-                        <a href="#"><img src="{{ url('fornt/images/s2.jpg') }}" alt=" " class="img-responsive" /></a>
-                    </div>
-                    <div class="clearfix"> </div>
-                </div>
+                    <li>
+                        <i class="fa fa-phone"></i> +1 1234567890
+                    </li>
+
+                    <li>
+                        <i class="fa fa-envelope"></i> info@Mattdavis.com
+                    </li>
+                </ul>
             </div>
             <div class="clearfix"> </div>
         </div>
+    </div>
+
+
     </div>
     <div class="agileinfo_footer_bottom1">
         <div class="container_footer">

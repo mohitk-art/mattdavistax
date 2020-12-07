@@ -2,19 +2,15 @@
 
 
 @section('content')
-<div class="content">
-    <div class="container-fluid">
 
-<div class="row">
-    <div class="col-lg-12 margin-tb">
-        <div class="pull-left">
-            <h2>Edit Role</h2>
-        </div>
-        <div class="pull-right">
-            <a class="btn btn-primary" href="{{ route('roles.index') }}"> Back</a>
-        </div>
-    </div>
-</div>
+<div class="card p-4 mb-0">
+
+    <h3 class="d-flex align-items-center justify-content-between">
+        Edit Role
+        <a class="btn btn-primary" href="{{ route('roles.index') }}"> Back</a>
+    </h3>
+    
+       
 
 
 @if (count($errors) > 0)
@@ -30,29 +26,32 @@
 
 
 {!! Form::model($role, ['method' => 'PATCH','route' => ['roles.update', $role->id]]) !!}
-<div class="row">
-    <div class="col-xs-12 col-sm-12 col-md-12">
+
         <div class="form-group">
-            <strong>Name:</strong>
-            {!! Form::text('name', null, array('placeholder' => 'Name','class' => 'form-control','readonly')) !!}
+            <label>Name:</label>
+            {!! Form::text('name', null, array('placeholder' => '','class' => 'form-control','readonly')) !!}
         </div>
-    </div>
-    <div class="col-xs-12 col-sm-12 col-md-12">
+    
         <div class="form-group">
-            <strong>Permission:</strong>
-            <br/>
+            <label>Permission:</label>
+            
+            <div class="form-row">
             @foreach($permission as $value)
-                <label>{{ Form::checkbox('permission[]', $value->id, in_array($value->id, $rolePermissions) ? true : false, array('class' => 'name')) }}
-                {{ $value->name }}</label>
-            <br/>
+                <label class="col-md-3 checks-control">
+                    {{ Form::checkbox('permission[]', $value->id, in_array($value->id, $rolePermissions) ? true : false, array('class' => 'name')) }}
+                    {{ $value->name }}
+                </label>
+            
             @endforeach
+            </div>
         </div>
-    </div>
-    <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+    
+    <div class="text-right">
         <button type="submit" class="btn btn-primary">Submit</button>
     </div>
-</div>
 {!! Form::close() !!}
 
-    </div></div>
+    
+</div>
+
 @endsection

@@ -1,0 +1,17 @@
+a {
+    color: #26bdef;
+}
+
+.btn-primary {
+    background-color: #26bdef !important;
+    border-color: #26bdef !important;
+    color: #fff !important;
+}
+
+.bg-primary {
+    background-color: #26bdef !important;
+}
+
+.text-primary {
+    color: #26bdef !important;
+}

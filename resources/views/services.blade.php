@@ -2,27 +2,20 @@
 
 @section('content')
 
-<br><br><br><br><br>
+<section class="top-section">
+    <div class="container">
+        <h1>Services</h1>
+        <p>We offer options to fit your busy schedule!</p>
+    </div>
+</section>
 
 <section class="pb-5 pt-5" id="services">
     <div class="container">
-        <div class="row mt-5">
-            <div class="col-lg-12">
-                <div class="center-heading">
-                   <h1 class="display-3 title-color text-center">SERVICES</h1>
-                </div>
-            </div>
-            <div class="offset-lg-12">
-                <div class="center-text">
-                    <p class="text-center"><b>We offer options to fit your busy schedule! </b></p>
-                </div>
-            </div>
-        </div>
 
-        <div class="row mt-4">
+        <div class="row mb-5">
             <div class="col-lg-4 col-sm-6">
               <div class="img">
-                  <img class="img-responsive" src="{{ url('fornt/images/tax.png')}}">
+                  <img class="img-responsive w-100" src="{{ url('fornt/images/tax.png')}}">
               </div>
             </div>
         <div class="col-lg-8 col-sm-8">
@@ -33,7 +26,7 @@
 ​ 				10 minutes prior to your turn in line. </p>
             </div>
           </div>
-      <div class="row mt-4">
+      <div class="row mb-5">
       <div class="col-lg-8 col-sm-8">
             <h6 class="walk">​DROP-OFFS</h6>
                 <hr />
@@ -42,14 +35,14 @@
 
             <div class="col-lg-4 col-sm-6">
               <div class="img">
-                  <img class="img-responsive" src="{{ url('fornt/images/drop.png')}}">
+                  <img class="img-responsive w-100" src="{{ url('fornt/images/drop.png')}}">
               </div>
             </div>
         </div>
-            <div class="row mt-0">
+            <div class="row">
               <div class="col-lg-4 col-sm-6">
               <div class="img">
-                  <img class="img-responsive" src="{{ url('fornt/images/appointment.png')}}">
+                  <img class="img-responsive w-100" src="{{ url('fornt/images/appointment.png')}}">
               </div>
             </div>
         <div class="col-lg-8 col-sm-8">

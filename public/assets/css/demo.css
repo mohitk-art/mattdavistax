@@ -73,10 +73,6 @@
     padding-top: 0.2%;
 }
 
-a.btn.btn-success.pull-right.permission_btn {
-    margin-right: 2% !important;
-}
-
 span.listing_cls {
     float: right;
     font-size: 18px;
@@ -116,7 +112,6 @@ span.listing_cls {
   /* Style the tab content */
   .tabcontent, .tabcontent2 {
     display: none;
-    padding: 6px 12px;
     /* border: 1.5 px solid #0084a7; */
     border-top: none;
   }
@@ -531,7 +526,7 @@ button.btnNext.btn.btn-outline-success {
 .tablink {
     background-color: #0084a7;
     color: white;
-    float: left;
+    /* float: left; */
     border: none;
     outline: none;
     cursor: pointer;
@@ -548,29 +543,16 @@ button.btnNext.btn.btn-outline-success {
   .tabcontent {
 
     display: none;
-    padding: 60px 40px;
+    padding: 20px;
     height: 100%;
   }
 
   #regForm {
-
-    margin: -12px auto;
-    font-family: Raleway;
-    padding: 40px;
-    /* width: 65%; */
-    min-width: 300px;
+    padding: 20px;
   }
 
   h1 {
     text-align: center;
-  }
-
-  input {
-    padding: 10px;
-    width: 100%;
-    font-size: 17px;
-    font-family: Raleway;
-    border: 1px solid #aaaaaa;
   }
 
   /* Mark input boxes that gets an error on validation: */
@@ -581,24 +563,6 @@ button.btnNext.btn.btn-outline-success {
   /* Hide all steps by default: */
   .tab2 {
     display: none;
-  }
-
-  button {
-    background-color: #4CAF50;
-    color: #ffffff;
-    border: none;
-    padding: 10px 20px;
-    font-size: 17px;
-    font-family: Raleway;
-    cursor: pointer;
-  }
-
-  button:hover {
-    opacity: 0.8;
-  }
-
-  #prevBtn {
-    background-color: #0084a7;
   }
 
   /* Make circles that indicate the steps of the form: */
@@ -716,13 +680,138 @@ button.btnNext.btn.btn-outline-success {
 
 .fafaicon{
     font-size: 20px !important;
-    margin-left: 2%;
+    margin-left: 10px;
+    cursor: pointer;
 }
 
-.custom_cls{
-    width: 10%;
+
+
+
+
+
+/* Bootstrap  */
+.d-flex{
+  display: flex !important;
 }
 
-.form_name{
-    width: 50%;
+.d-none{
+  display: none !important;
+}
+
+.justify-content-between{
+  justify-content: space-between !important;
+}
+
+.align-items-center{
+  align-items: center;
+}
+
+.float-initial{
+  float: initial !important;
+}
+
+.form-row{
+  margin-left: -10px;
+  margin-right: -10px;
+}
+
+.form-row > *{
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+}
+
+.form-row::before, .form-row::after{
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.label{
+  color: #fff !important;
+  display: inline-block;
+}
+
+/* Bootstrap End */
+
+.checks-control {
+  margin-bottom: 10px !important;
+  font-weight: 500 !important;
+  display: block;
+  color: #333 !important;
+}
+
+.checks-control > input{
+  margin-right: 10px;
+}
+
+.blog-thumbnail{
+  height: 150px;
+  width:150px;
+  object-fit: cover;
+  border:1px solid #e2e2e2;
+  object-position: top center;
+}
+
+.main-content {
+  padding: 20px 15px;
+  min-height: calc(100vh - 121px);
+}
+
+.main-content::before, .main-content::after{
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.card-image img{
+  object-fit: cover;
+  object-position: top center;
+}
+
+.profile-avtar{
+  height: 80px;
+  width:80px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.text {
+  padding: 9px 13px;
+  background-color: #f7f7f8;
+}
+
+.images-row .img{
+  width:100%;
+  height: 200px;
+  padding: 7px;
+  object-fit: cover;
+  border: 1px solid #e4e4e4;
+  object-position: top center;
+}
+
+.images-row > div:empty{
+  display: none;
+}
+
+.images-row > div{
+  margin-bottom: 10px;
+}
+
+.pdf {
+  font-size: 150px;
+  text-align: center;
+  align-items: center;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  border: 1px solid #e4e4e4;
+}
+
+.pdf i{
+display: contents;
+}
+
+table td form{
+  display: inline;
 }

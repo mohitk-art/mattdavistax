@@ -1,2 +1,11 @@
 public/front/css/style.css
 
+resources/views/welcome.blade.php
+resources/views/guarantee.blade.php
+resources/views/services.blade.php
+resources/views/blogs/blog_list
+resources/views/blogs/blog_details
+
+resources/views/front_layout/app.blade.php
+resources/views/front_layout/menu.blade.php
+resources/views/front_layout/footer.blade.php

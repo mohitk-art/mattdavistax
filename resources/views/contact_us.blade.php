@@ -2,17 +2,15 @@
 
 @section('content')
 
-<br><br><br><br><br>
+<section class="top-section">
+    <div class="container">
+        <h1>Get in Touch</h1>
+        <p>We offer options to fit your busy schedule!</p>
+    </div>
+</section>
+
 <div class="container">
     <div class="innerwrap">
-
-        <section class="section1 clearfix">
-            <div class="textcenter">
-                <span class="shtext">Contact Us</span>
-                <span class="seperator"></span>
-                <h1>Get in Touch</h1>
-            </div>
-        </section>
 
         <section class="section2 clearfix">
             <div class="col2 column1 first">
