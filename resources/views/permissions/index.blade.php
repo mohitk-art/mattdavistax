@@ -8,7 +8,7 @@
     Permissions Management
     {{-- <a href="{{ route('users.index') }}" class="btn btn-default pull-right">Users</a> --}}
     <!-- <a href="{{ route('roles.index') }}" class="btn btn-success pull-right role_btn">Roles</a> -->
-    <a href="{{ URL::to('permissions/create') }}" class="btn btn-success pull-right permission_btn">Add Permission</a>
+    <a href="{{ URL::to('permissions/create') }}" class="btn btn-primary">Add Permission</a>
     </h3>
 
     <div class="table-responsive">

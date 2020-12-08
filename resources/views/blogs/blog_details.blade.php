@@ -6,17 +6,20 @@
     <div class="container">
         <h1 class="mb-3">{{ str_limit($blog_details->title, $limit = 30, $end = '....') }}</h1>
         <!-- <p></p> -->
-
-        <div class="blog-breadcrumb">
-          <a href="{{url('/')}}">Home</a>
-          <a href="{{url('/blogs_list')}}">Blogs</a>
-          <a>{{ str_limit($blog_details->title, $limit = 30, $end = '....') }}</a>
-        </div>
     </div>
 </section>
 
+<div class="bg-primary py-3">
+  <div class="container">
+  <div class="blog-breadcrumb">
+          <a href="{{url('/')}}">Home</a>
+          <a href="{{url('/blogs_list')}}">Blogs</a>
+        </div>
+  </div>
+</div>
 
-<div class="container py-5">
+
+<div class="container py-3">
     <div class="row">
         <div class="col-md-9 mb-3">
             <div class="shadow">
@@ -43,7 +46,7 @@
 
         <div class="col-md-3">
           <div class="shadow">
-            <h4 class="bg-dark text-white mb-0 px-3 py-2">Resent Blogs</h4>
+            <h4 class="bg-dark text-white mb-0 px-3 py-2">Recent Blogs</h4>
 
             <div class="blog-links px-3 pb-3 pt-2">
               <a class="border-bottom text-truncate">COVID-19... Working from home....</a>

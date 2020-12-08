@@ -49,18 +49,19 @@
             </form>
 
 
-              <h4 class="wgt-title mb-3">Categories</h4>
+              <h4 class="wgt-title mb-3">Recent Blogs</h4>
                     
-              <div class="category-list mb-4">
-                  <label>
-                    <input type="radio" class="mr-2" name="category" checked />
-                    <span>All</span>
-                  </label>
-                  <label>
-                      <input type="radio" class="mr-2" name="category" />
-                      <span>category 1</span>
-                  </label>
-              </div>
+              <ul class="nav flex-column">
+                <li class="nav-item">
+                  <a class="nav-link px-0" href="#">COVID-19... Working from home....</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link px-0" href="#">COVID-19... Working from home....</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link px-0" href="#">COVID-19... Working from home....</a>
+                </li>
+              </ul>
 
         </div>
 

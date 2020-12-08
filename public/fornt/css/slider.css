@@ -345,7 +345,7 @@ nav.tabs ul li a:hover {
 
 .slide-content p {
     color: white;
-    font-weight: 100;
+    /* font-weight: 100; */
     font-size: 30px;
     background: rgba(208, 210, 218, 0.22);
     padding: 0px 30px;

@@ -2,52 +2,51 @@
 
 @section('content')
 
-<div class="banner_agile_info_wthree"><h2>H&R Block Tax Software</h2></div>
 		<div class="sleekslider" id="home">
 			<!-- Slider Pages -->
-			<div class="slide active bg-1">
+			<div class="slide bg-1">
 				<div class="slide-container">
-					<div class="slide-content">
+					<div class="slide-content text-center text-light">
+						<h1 class="mb-4">H&R Block Tax Software</h1>
 						<p class="wow fadeInLeft" data-wow-duration=".8s" data-wow-delay=".2s">Perfect Business Startup</p>
 					</div>
-
 				</div>
 			</div>
 			<div class="slide bg-2">
 				<div class="slide-container">
-					<div class="slide-content">
+					<div class="slide-content text-center text-light">
+						<h1 class="mb-4">H&R Block Tax Software</h1>
 						<p class="wow fadeInLeft" data-wow-duration=".8s" data-wow-delay=".4s">Exclusive Digital Services</p>
-
 					</div>
 				</div>
 			</div>
 			<div class="slide bg-3">
 				<div class="slide-container">
-					<div class="slide-content">
+					<div class="slide-content text-center text-light">
+							<h1 class="mb-4">H&R Block Tax Software</h1>
 							<p class="wow fadeInLeft" data-wow-duration=".8s" data-wow-delay=".2s">Perfect Business Startup</p>
-
 					</div>
 				</div>
 			</div>
 			<div class="slide bg-4">
 				<div class="slide-container">
-					<div class="slide-content">
+					<div class="slide-content text-center text-light">
+						<h1 class="mb-4">H&R Block Tax Software</h1>
 						<p class="wow fadeInLeft" data-wow-duration=".8s" data-wow-delay=".4s">Exclusive Digital Services</p>
-
 					</div>
 				</div>
 			</div>
 			<div class="slide bg-5">
 				<div class="slide-container">
-					<div class="slide-content">
+					<div class="slide-content text-center text-light">
+							<h1 class="mb-4">H&R Block Tax Software</h1>
 							<p class="wow fadeInLeft" data-wow-duration=".8s" data-wow-delay=".2s">Perfect Business Startup</p>
-
 					</div>
 				</div>
 			</div>
 
 			<!-- Navigation Arrows with Thumbnails -->
-			<nav class="nav-split">
+			<!-- <nav class="nav-split">
 				<a class="prev" href="">
 					<span class="icon-wrap"><svg class="icon" width="22" height="22" viewBox="0 0 64 64"><use xlink:href="#arrow-left" /></svg></span>
 					<div>
@@ -62,7 +61,7 @@
 						<img alt="Next thumb"/>
 					</div>
 				</a>
-			</nav>
+			</nav> -->
 
 			<!-- Pagination -->
 			<nav class="pagination">
@@ -296,8 +295,8 @@
 												<li><i class="fa fa-comments" aria-hidden="true"></i>10 Comments</li>
 											</ul>
 											<p class="para-w3layouts">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis hendrerit lobortis elementum. </p>
-											<div class="wthree_more wthree_more1">
-												<a href="#">Read More</a>
+											<div class="wthree_more">
+												<a href="#" class="btn btn-primary">Read More</a>
 											</div>
 										</div>
 								</div>
@@ -313,8 +312,8 @@
 												<li><i class="fa fa-comments" aria-hidden="true"></i>20 Comments</li>
 											</ul>
 											<p class="para-w3layouts">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis hendrerit lobortis elementum. </p>
-											<div class="wthree_more wthree_more1">
-												<a href="#">Read More</a>
+											<div class="wthree_more">
+												<a href="#" class="btn btn-primary">Read More</a>
 											</div>
 										</div>
 								</div>
@@ -330,8 +329,8 @@
 												<li><i class="fa fa-comments" aria-hidden="true"></i>30 Comments</li>
 											</ul>
 											<p class="para-w3layouts">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis hendrerit lobortis elementum. </p>
-											<div class="wthree_more wthree_more1">
-												<a href="#">Read More</a>
+											<div class="wthree_more">
+												<a href="#" class="btn btn-primary">Read More</a>
 											</div>
 										</div>
 								</div>

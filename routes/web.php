@@ -53,3 +53,11 @@ Route::Get('guarantee',[UsersController::class, 'guarantee']);
 Route::Get('chat',function(){
     return view('chat');
 });
+
+
+Route::Post('/contactus',[UsersController::class,'contactUsMessage']);
+
+Route::Post('update_doc_status',[UsersController::class,'updateDocStatus'])->name('update_doc_status');
+
+Route::Post('/search_customer',[UsersController::class,'searchCustomer']);
+

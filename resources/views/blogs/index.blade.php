@@ -4,7 +4,7 @@
 <div class="card p-4 mb-0">
     <h3 class="d-flex align-items-center justify-content-between">
         Blog List
-        <a class="btn btn-success" href="{{ route('blogs.create') }}"> Create New blog</a>
+        <a class="btn btn-primary" href="{{ route('blogs.create') }}"> Create New blog</a>
     </h3>
                    
 
@@ -30,7 +30,7 @@
             <td>
                 <form action="{{ route('blogs.destroy',$blog->id) }}" method="POST">
 
-                    <a class="btn btn-info mr-2" href="{{ route('blogs.show',$blog->id) }}">Show</a>
+                    <a class="btn btn-secondary mr-2" href="{{ route('blogs.show',$blog->id) }}">Show</a>
 
                     <a class="btn btn-primary mr-2" href="{{ route('blogs.edit',$blog->id) }}">Edit</a>
 

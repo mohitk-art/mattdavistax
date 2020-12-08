@@ -12,13 +12,16 @@ Smartphone Compatible web template, free web designs for Nokia, Samsung, LG,sony
 
 <link href='//fonts.googleapis.com/css?family=Abril+Fatface' rel='stylesheet' type='text/css'>
 <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,600,600i,700,700i,800" rel="stylesheet">
-<link href="//fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 <!--Custom-Theme-files-->
 <link href="{{ url('fornt/css/font-awesome.css') }}" rel="stylesheet">
 <link rel="stylesheet" href="{{ url('fornt/css/flexslider.css') }}" type="text/css" media="screen" property="" /><!--Blog slider-->
 <link rel="stylesheet" href="{{ url('fornt/css/slider.css') }}">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
 <link href="{{ url('fornt/css/color.css') }}" rel='stylesheet' type='text/css' />
-<link href="{{ url('fornt/css/style.css') }}" rel='stylesheet' type='text/css' />
+<link href="{{ url('fornt/css/styles.css') }}" rel='stylesheet' type='text/css' />
 <link href="{{ url('fornt/css/main.css') }}" rel='stylesheet' type='text/css' />
 <link href="{{ url('fornt/css/responsive.css') }}" rel='stylesheet' type='text/css' media="(max-width:991px)" />
 </head>
@@ -35,6 +38,7 @@ Smartphone Compatible web template, free web designs for Nokia, Samsung, LG,sony
 <!-- JavaScripts -->
 <script type="text/javascript" src="{{ url('fornt/js/jquery-2.1.4.min.js') }}"></script>
 <script type="text/javascript" src="{{ url('fornt/js/sleekslider.js') }}"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <script type="text/javascript" src="{{ url('fornt/js/app.js') }}"></script>
 <!--/script-->
 <!-- stats -->
@@ -107,6 +111,12 @@ Smartphone Compatible web template, free web designs for Nokia, Samsung, LG,sony
 
 									});
 								</script>
+
+<script>
+	$('.sleekslider1').slick();
+</script>
+
+
 		<a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
 <!-- for bootstrap working -->
 		<script src="{{ url('fornt/js/bootstrap.js') }}"></script>
