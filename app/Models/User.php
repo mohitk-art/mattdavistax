@@ -74,6 +74,9 @@ class User extends Authenticatable
     }
 
 
-
+    public function userDetails()
+    {
+        return $this->belongsTo('App\Models\UserDetails','id','user_id');
+    }
 
 }

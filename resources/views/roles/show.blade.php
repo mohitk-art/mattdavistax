@@ -5,9 +5,8 @@
 
 <div class="card p-4 mb-0">
     
-    <h3 class="d-flex align-items-center justify-content-between">
+    <h3>
         Show Role
-        <a class="btn btn-primary" href="{{ route('roles.index') }}"> Back</a>
     </h3>
     
             
@@ -24,6 +23,10 @@
                     <label class="label label-success">{{ $v->name }}</label>
                 @endforeach
             @endif
+        </div>
+
+        <div class="mt-4 text-right">
+        <a class="btn btn-primary" href="{{ route('roles.index') }}"> Back</a>
         </div>
 
 </div>

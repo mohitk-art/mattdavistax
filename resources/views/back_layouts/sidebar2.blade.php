@@ -80,7 +80,7 @@
             @can('taxs')
                 <li class="{{ (request()->is('tax')) ? 'active' : '' }}">
                     @role('customer')
-                        <a href="{{ url('tax',base64_encode(Auth::user()->id)) }}">
+                        <a href="{{ url('tax',Auth::user()->id) }}">
                             <i class="pe-7s-map-marker"></i><p>Tax</p>
                         </a>
                     @endrole

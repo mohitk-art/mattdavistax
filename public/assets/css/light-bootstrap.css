@@ -1997,7 +1997,6 @@ fieldset[disabled] .btn-neutral.active {
 }
 
 .card .title {
-    margin: 0;
     color: #333333;
     font-weight: 300;
 }
@@ -2987,15 +2986,7 @@ fieldset[disabled] .btn-neutral.active {
     body > .navbar-collapse.collapse {
         display: none !important;
     }
-    .card form [class*="col-"] {
-        padding: 6px;
-    }
-    .card form [class*="col-"]:first-child {
-        padding-left: 15px;
-    }
-    .card form [class*="col-"]:last-child {
-        padding-right: 15px;
-    }
+   
 }
 
 /*          Changes for small display      */

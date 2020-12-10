@@ -5,9 +5,8 @@
 
 <div class="card p-4 mb-0">
 
-    <h3 class="d-flex align-items-center justify-content-between">
+    <h3>
         Edit Role
-        <a class="btn btn-primary" href="{{ route('roles.index') }}"> Back</a>
     </h3>
     
        
@@ -47,6 +46,7 @@
         </div>
     
     <div class="text-right">
+    <a class="btn btn-secondary mr-2" href="{{ route('roles.index') }}"> Back</a>
         <button type="submit" class="btn btn-primary">Submit</button>
     </div>
 {!! Form::close() !!}

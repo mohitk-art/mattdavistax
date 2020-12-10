@@ -7,7 +7,7 @@
     <div class="container">
         <div class="row">
 
-        <div class="col-md-3 agileinfo_footer_bottom_grid">
+        <div class="col-md-3 agileinfo_footer_bottom_grid mb-3">
                 <h3>Contact With <span>Us</span></h3>
                 <ul class="icons-links text-white">
                     <li>
@@ -24,7 +24,7 @@
                 </ul>
             </div>
             
-            <div class="col-md-3 agileinfo_footer_bottom_grid">
+            <div class="col-md-3 agileinfo_footer_bottom_grid mb-3">
                 <h3>Partner With <span>Us</span></h3>
                 <div class="unorder">
                     <ul class="tag2 tag_agileinfo">
@@ -35,14 +35,14 @@
                 </div>
             </div>
 
-            <div class="col-md-3 agileinfo_footer_bottom_grid">
+            <div class="col-md-3 agileinfo_footer_bottom_grid mb-3">
                 <h3>Help <span></span></h3>
                 <div class="unorder">
                     <ul class="tag2 tag_agileinfo">
-                        <li class="d-block mb-2"><a class="d-block" href="#">About Us</a></li>
-                        <li class="d-block mb-2"><a class="d-block" href="#">Contact Us</a></li>
-                        <li class="d-block mb-2"><a class="d-block" href="#">Terms And Conditions</a></li>
-                        <li class="d-block mb-2"><a class="d-block" href="#">Privacy Policy</a></li>
+                        <li class="d-block mb-2"><a class="d-block" href="{{url('blogs_list')}}">Blogs</a></li>
+                        <li class="d-block mb-2"><a class="d-block" href="{{url('contact_us')}}">Contact Us</a></li>
+                        <li class="d-block mb-2"><a class="d-block" href="{{url('terms_and_Conditions')}}">Terms And Conditions</a></li>
+                        <li class="d-block mb-2"><a class="d-block" href="{{url('privacy_policy')}}">Privacy Policy</a></li>
                     </ul>
                 </div>
             </div>
@@ -72,9 +72,8 @@
 
     </div>
     <div class="agileinfo_footer_bottom1">
-        <div class="container_footer">
-                <p>© 2020 Mattdavis Tax Service. All rights Reserved </p>
-            <div class="clearfix"> </div>
+        <div class="container_footer text-light text-center">
+                © 2020 Mattdavis Tax Service. All rights Reserved
         </div>
     </div>
 </div>

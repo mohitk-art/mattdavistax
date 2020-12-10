@@ -26,7 +26,7 @@
 
               @if($blog_details->image != null)
               <div class="img-div">
-                <img class="w-100" src="{{url('images',$blog_details->image)}}" />
+                <img class="w-100" src="{{url('/images',$blog_details->image)}}" />
               </div>
               @endif
 

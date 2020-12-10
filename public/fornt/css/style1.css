@@ -2,8 +2,7 @@ html,body{font-family:'Open Sans',sans-serif;font-size:100%;background:#FFf}
 body a{transition:.5s all;-webkit-transition:.5s all;-moz-transition:.5s all;-o-transition:.5s all;-ms-transition:.5s all}
 a:hover{text-decoration:none}
 input[type="button"],input[type="submit"],li.parallelogram{transition:.5s all;-webkit-transition:.5s all;-moz-transition:.5s all;-o-transition:.5s all;-ms-transition:.5s all}
-h1,h2,h3,h4,h5,h6{margin:0;font-family:'Roboto',sans-serif;font-weight:700;margin-bottom:10px}
-p{margin:0;font-family:'Open Sans',sans-serif;letter-spacing:1px;margin-bottom:10px}
+
 ul{margin:0;padding:0}
 label{margin:0}
 .top_banner{position:relative}
@@ -128,8 +127,7 @@ h3.title-w3-agileits:after{top:108%}
 .top_header_agile_info_w3ls{position:absolute;z-index:99;width:100%;border-bottom:1px solid rgba(221,221,221,0.13);top:-2%}
 .banner_agile_info_wthree h2{color:#fff;font-weight:700;font-size:4em;border:none;letter-spacing:5px}
 .about-wel{text-align:left}
-.come{padding-left:3em}
-.come h3{text-align:left!important}
+
 .red-w3l{background:rgba(232,231,231,0.84);padding:10px;position:relative;box-shadow:0 1px 4px #a5a5a7}
 .red-w3l img{width:100%}
 .position-w3l{position:absolute;border:12px solid rgba(0,0,0,0.53);top:10%;padding:16em 13em;left:12%}
@@ -144,8 +142,8 @@ h3.title-w3-agileits:after{top:108%}
 .w3l_banner_bottom_grid1:nth-child(2),.w3l_banner_bottom_grid1:nth-child(3){margin-top:2em}
 .w3ls_banner_bottom_grid:hover .w3l_banner_bottom_grid1 i{color:#0accff}
 .w3ls_banner_bottom_grids h6{font-size:2.5em;line-height:59px;color:#232323;font-weight:300}
-.w3l_banner_bottom_grid1:before{content:" ";width:48px;height:2px;background:#e6e6e6;position:absolute;top:31px;left:-89%}
-.w3l_banner_bottom_grid1:after{content:" ";width:12px;height:12px;background:#000;position:absolute;top:25px;border-radius:50px;left:-89%}
+.w3l_banner_bottom_grid1:before{content:" ";width:3rem;height:2px;background:#e6e6e6;position:absolute;top:31px;left:-3rem}
+.w3l_banner_bottom_grid1:after{content:" ";width:12px;height:12px;background:#000;position:absolute;top:25px;border-radius:50px;left:-46px}
 .first-posi-w3l:before{position:relative}
 .w3ls_banner_bottom_grids h6:nth-child(2),.w3ls_banner_bottom_grids h6:nth-child(3){margin-top:.8em}
 .w3ls_banner_bottom_grids p:nth-child(2),.w3ls_banner_bottom_grids p:nth-child(3){margin-top:2.2em!important}
@@ -223,7 +221,6 @@ ul.tag2:last-child{margin:0}
 .agileinfo_footer_bottom_grid ul.twi li a.mail{color:#B8B8B8;font-size:.9em;line-height:1.9em;font-weight:600;letter-spacing:1px}
 .agileinfo_footer_bottom_grid ul.twi li a.mail:hover{color:#fff}
 .agileinfo_footer_bottom_grid ul.twi li span{display:block;margin:1em 0 0;color:#fff;font-size:.9em}
-.agileinfo_footer_bottom_grid{padding-right:0}
 .agileinfo_footer_bottom1{padding:1em 0;background:#0f0f10}
 .index-copy-right{background:transparent}
 .agileinfo_footer_bottom1 p{color:#fff;font-size:14px;letter-spacing:1.5px;text-align:center}
@@ -606,16 +603,11 @@ h3.title-w3-agileits{font-size:2.4em}
 .w3layouts_about_grid_right{padding-right:0}
 .agileinfo_header1:after{right:34%}
 .position-w3l{position:absolute;border:12px solid rgba(0,0,0,0.53);top:11%;padding:14em 11em;left:10%}
-.agileits_banner_bottom_left{width:50%}
-.agileinfo_footer_bottom_grid ul.tag2 li a{font-size:9px;padding:13px 21px}
 .m_nav_item{display:inline-block;margin-right:.1em}
 .event-info-wthree h5,.blog-info-agileits-w3layouts h5 a{font-size:18px}
 .test-review{padding:3em 1em 1em}
 }
 @media (max-width:1050px) {
-.agileinfo_footer_bottom_grid{padding-right:0;width:50%;margin-bottom:2em}
-.agileinfo_footer_bottom_grid:nth-child(4),.agileinfo_footer_bottom_grid:nth-child(3){margin:0}
-.agileinfo_footer_bottom_grid ul.tag2 li a{font-size:13px;padding:8px 21px}
 .w3ls_team_grid h4{font-size:.9em}
 }
 @media (max-width: 1024px) {
@@ -679,11 +671,8 @@ h3.title-w3-agileits{font-size:2.4em}
 .agileits_w3layouts_mail_left{float:left;width:100%}
 .agileits_w3layouts_mail_left:nth-child(2){margin:1em 0}
 .m_nav_item a{letter-spacing:2px;padding:10px 20px;font-size:.8em}
-.come{padding:0;margin-top:2em}
 .w3layouts_stats_left{padding:0;text-align:center;float:left;width:50%;margin-bottom:2em}
 .stats{min-height:300px;padding:3em 0 1em}
-.agileinfo_footer_bottom_grid:nth-child(4){margin:0}
-.agileinfo_footer_bottom_grid:nth-child(3){margin-bottom:2em}
 .position-w3l{position:absolute;border:12px solid rgba(0,0,0,0.53);top:9%;padding:23em 17em;left:10%}
 .w3ls_banner_bottom_right img{width:100%;float:none}
 .blog-info-agileits-w3layouts{padding:2em 1em 2em .2em;width:100%}
@@ -815,9 +804,6 @@ p.b_label{margin:0 0 .5em!important}
 .w3layouts_newsletter_right{width:100%}
 .banner_agile_info_wthree h2{font-size:2.3em;letter-spacing:3px}
 .position-w3l{position:absolute;border:12px solid rgba(0,0,0,0.53);top:10%;padding:16em 11em;left:14%}
-.agileinfo_footer_bottom_grid ul.tag2 li{display:block;margin-bottom:21px;width:50%;float:left}
-.agileinfo_footer_bottom_grid ul.tag2 li a{font-size:13px;padding:8px 40px;width:100%}
-.agileinfo_footer_bottom_grid{width:100%}
 }
 @media (max-width: 480px) {
 .agile_banner_info_pos{left:-31%}
@@ -965,7 +951,7 @@ h3.title-w3-agileits{font-size:2.2em}
 .position-w3l{top:10%;padding:10em 7em;left:13%}
 .w3ls_banner_bottom_grids.first-posi-w3l{padding-left:2em}
 .w3l_banner_bottom_grid1:before{content:" ";width:39px;height:2px;top:31px;left:-75%}
-.w3l_banner_bottom_grid1:after{top:25px;left:-72%}
+.w3l_banner_bottom_grid1:after{top:25px;left:-46px}
 .test-review ul li{margin:0 3px!important}
 }
 @media (max-width: 375px) {
@@ -992,8 +978,6 @@ h3.title-w3-agileits{font-size:1.8em;letter-spacing:1px}
 .w3_agileits_banner_bottom_pos_grid{padding:2em 1em}
 .position-w3l{top:10%;padding:9.5em 7em;left:11%}
 .w3ls_banner_bottom_grids p{margin-top:14px!important}
-.agileinfo_footer_bottom_grid{padding-right:0;width:100%;margin-bottom:2em}
-.agileinfo_footer_bottom_grid ul.tag2 li{display:block;margin-bottom:21px;width:50%;float:left}
 }
 @media (max-width: 320px) {
 #m_nav_menu{top:4%}
@@ -1042,7 +1026,6 @@ h3.title-w3-agileits{font-size:1.6em;letter-spacing:1px}
 .wthree_banner_bottom_grid_right h4{font-size:1em;margin-bottom:.7em;letter-spacing:1px}
 .position-w3l{top:10%;padding:8.2em 6em;left:12%;border:6px solid rgba(0,0,0,0.53)}
 .banner_agile_info_wthree h2{font-size:1.55em;letter-spacing:1px}
-.agileinfo_footer_bottom_grid ul.tag2 li{display:block;margin-bottom:21px;width:50%;float:left}
 .test-review img{top:-2em;left:36%;width:28%}
 .test-review h5{font-size:1em}
 .w3ls_banner_bottom_grids{text-align:right;margin-left:.5em;width:24%}

@@ -14,7 +14,9 @@ use Spatie\Permission\Models\Permission;
 
 use App\Models\UserDetails;
 use App\Models\UserDocument;
+use Illuminate\Support\Facades\Crypt;
 
+use function PHPUnit\Framework\isEmpty;
 
 class UsersController extends Controller
 {
@@ -24,19 +26,31 @@ class UsersController extends Controller
     public function __construct()
     {
         $this->admin_email="aimanshugupta@gmail.com";
+
+        $this->middleware('auth');
+
     }
 
 
 
     public function index()
     {
-       $users   =User::whereNotIn('id',['1'])->with('roles')->paginate(20);
-       return view('users.list',compact('users'));
+      $role = auth()->user()->roles[0]['name'];
+       if($role == 'admin'){
+       $users     =User::whereNotIn('id',['1'])->with('roles','userDetails')->paginate(20);
+       }elseif($role == 'staff'){
+         $users   =User::role('customer')->with('userDetails')->paginate(20);
+       }else{
+         $users   =User::whereNotIn('id',['1'])->with('roles','userDetails')->paginate(20);
+       }
+        $query=null;
+       return view('users.list',compact('users','query'));
     }
 
 
     public function create($id)
     {
+        $id= base64_decode($id);
         if($id== '0'){
             $user           =null;
             $role_name      =null;
@@ -80,6 +94,8 @@ class UsersController extends Controller
 
     public function show($id)
     {
+        $id= base64_decode($id);
+
         if($id== '0'){
             $user=null;
         }else{
@@ -92,39 +108,47 @@ class UsersController extends Controller
 
     public function edit($id,Request $request)
     {
+
+        $this->validate($request, [
+            'name' => 'required|min:5',
+            'phone' => 'required|min:10|max:10',
+        ]);
+
+
         $user               =User::where('id',$id)->first();
-        $role_name          = $user->getRoleNames()->first();
+
+        if(isset($request->file)){
+            $imagename=explode('.',$request->file->getClientOriginalName());
+            $file =$imagename[0].time().'.'.$request->file->getClientOriginalExtension();
+            $request->file->move(public_path('profile_images'), $file);
+            $user->profile_photo_path = $file;
+        }
+
+        if($request->password !=null){
+            $user->password     =Hash::make($request->password);
+        }
 
         $user->name         =$request->name;
-        $user->password     =Hash::make($request->password);
         $user->phone        =$request->phone;
         $user->save();
 
-        $user->removeRole($role_name);
-        $user->assignRole($request->roles);
 
-        return redirect('users')->with('success','User Updated Successfull');
+        return back()->with('success','User Updated Successfull');
     }
 
 
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    public function destroy($id)
-    {
-        //
-    }
 
     public function tax(Request $request,$UserID)
     {
 
-    //   $users = auth()->user();
-      $users=User::where('id',$UserID)->first();
+        $UserID= base64_decode($UserID);
+        $user = Auth::user();
+        $userRoleName=$user->getRoleNames();
+        //   $users = auth()->user();
+      $users=User::where('id',$UserID)->with('roles')->first();
       $user_details=UserDetails::where('user_id',$UserID)->first();
       $userDocuments=UserDocument::where('user_id',$UserID)->get();
-       return view('profile.setting_profile',compact('users','user_details','userDocuments'));
+       return view('profile.setting_profile',compact('users','user_details','userDocuments','userRoleName'));
     }
 
 
@@ -182,25 +206,25 @@ class UsersController extends Controller
     //For Upload Doduction
     public function deductionDocument(Request $request,$doc_type)
     {
-
-        if($doc_type ==1){
-            $docType="Income";
-            $folder_name="income_documents";
-        }if ($doc_type ==2) {
-            $docType="Credits";
-            $folder_name="credit_documents";
-        }else{
+        if($doc_type == 1){
             $docType="Deductions";
             $folder_name="deduction_documents";
+        }elseif($doc_type == 2) {
+            $docType="Credits";
+            $folder_name="credit_documents";
+        }elseif($doc_type == 3){
+            $docType="Income";
+            $folder_name="income_documents";
         }
 
+        $id=base64_encode($request->userId);
 
         $image = $request->file('file');
-        $imageName = time().'.'.$image->extension();
+        $imageName = $image->getClientOriginalName().'#'.$id;
 
         //For Save Data into DB
-        $UserDocument               =new UserDocument();
-        $UserDocument->user_id      =$request->userId;
+        $UserDocument                        =new UserDocument();
+        $UserDocument->user_id               =$request->userId;
         $UserDocument->document_name         =$docType;
         $UserDocument->document_type         =$image->extension();
         $UserDocument->document_url          =$imageName;
@@ -214,20 +238,89 @@ class UsersController extends Controller
     }
 
 
-
-    public function contactUs(Request $request)
+    public function fileRemove(Request $request)
     {
-       return view('contact_us');
+        $id=base64_encode($request->userId);
+        $filename = $request->id.'#'.$id;
+        $uploaded_image = UserDocument::where('user_id', $request->userId)->where('document_url',$filename)->first();
+
+        if (empty($uploaded_image)) {
+            return Response::json(['message' => 'Sorry file does not exist'], 400);
+        }
+
+        if($uploaded_image->document_name = "Income"){
+            $file_location='income_documents';
+        }elseif($uploaded_image->document_name = "Deductions"){
+            $file_location='deduction_documents';
+        }else{
+            $file_location='credit_documents';
+        }
+
+        $file_path = $file_location . $uploaded_image->document_url;
+
+        if (file_exists($file_path)) {
+            // Storage::delete($file_path);
+            unlink($file_path);
+        }
+
+        if (!empty($uploaded_image)) {
+            $uploaded_image->delete();
+        }
+        return Response::json(['message' => 'File successfully delete'], 200);
     }
 
-    public function services()
+
+
+
+
+    public function updateDocStatus(Request $request)
     {
-        return view('services');
+        $UserDocuments      =UserDocument::where('user_id',$request->userId)->get();
+        foreach($UserDocuments as $UserDocument){
+            $UserDocument->status            =$request->document_status_id;
+            $UserDocument->doc_approve_by    =auth()->user()->id;
+            $UserDocument->save();
+        }
+
+       return response()->json(['success'=>auth()->user()->id]);
     }
 
-    public function guarantee(){
-        return view('guarantee');
+
+    public function searchCustomer(Request $request)
+    {
+         $query=$request->gsearch;
+
+        $subtitle = \DB::table('users')
+        ->where('name', 'LIKE', '%'.$query.'%');
+
+        $tagtitle = \DB::table('users')
+            ->where('email', 'LIKE', '%'.$query.'%');
+
+        // $tagsubtitle = \DB::table('user_details')
+        //     ->where('ssn', 'LIKE', '%'.$query.'%');
+
+      $users = User::where('phone', 'LIKE', '%'.$query.'%')
+            ->union($subtitle)
+            ->union($tagtitle)
+            // ->union($tagsubtitle)
+            ->paginate(20);
+
+        if(isEmpty($users)){
+            $UserDetails=UserDetails::where('ssn','LIKE',"%{$request->gsearch}%")->first();
+            if($UserDetails !=null){
+              $users=User::where('id',$UserDetails->user_id)->paginate(20);
+            }
+        }
+
+        $role = auth()->user()->roles[0]['name'];
+        return view('users.list',compact('users','query'));
     }
+
+
+
+
+
+
 
 
 }

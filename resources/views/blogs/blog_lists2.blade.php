@@ -18,9 +18,9 @@
               <div class="col-md-6 p-0">
                 <a href="{{url('blog_details',$blog->id)}}" class="d-block position-relative newshover hover-cursor">
                   @if($blog->image != null)
-                  <img src="{{ url('public/images/',$blog->image) }}" class="position-absolute h-100 w-100" />
+                  <img src="{{ url('/images/',$blog->image) }}" class="position-absolute h-100 w-100" />
                   @else
-                  <img src="{{url('public/images/No-image-available-2.jpg')}}" class="position-absolute h-100 w-100" />
+                  <img src="{{url('/images/No-image-available-2.jpg')}}" class="position-absolute h-100 w-100" />
                   @endif
                 </a>
               </div>
@@ -29,8 +29,8 @@
                 <a href="{{url('blog_details',$blog->id)}}" class="h3 d-block text-uppercase font-weight-bold hover-cursor">{{ str_limit($blog->title, $limit = 30, $end = '....') }}</a>
                 <div class="mb-3">
                   <i class="fa fa-calendar mr-2"></i>
-                  {{$blog->created_at}}
-                  {{-- <i class="fa fa-user ml-3 mr-2"></i> Admin --}}
+                  4 Dec 2020
+                  <i class="fa fa-user ml-3 mr-2"></i> Nishant
                 </div>
                 <span>
                 {{ str_limit($blog->description , $limit = 50, $end = '....') }}
@@ -42,25 +42,25 @@
 
           </div>
 
-          <div class="col-md-3 mb-3">
-          <form class="search-flex search-flex-sm mb-4" action="{{url('blogs_list')}}" method="POST">
-                <input type="text" class="form-control" name="search" placeholder="Search Name" required/>
-                <button type="submit" class="btn1"><i class="fa fa-search"></i></button>
-          </form>
+          <div class="col-md-3">
+            <form class="search-flex search-flex-sm mb-4">
+                <input type="text" class="form-control" name="search" placeholder="Search Name" />
+                <button class="btn1"><i class="fa fa-search"></i></button>
+            </form>
 
 
               <h4 class="wgt-title mb-3">Recent Blogs</h4>
-
+                    
               <ul class="nav flex-column">
-                @foreach ($blogs as $blog)
-                @if($blog->id != 1)
-
                 <li class="nav-item">
-                  <a class="nav-link px-0" href="{{url('blog_details',$blog->id)}}">{{ str_limit($blog->title, $limit = 30, $end = '....') }}</a>
+                  <a class="nav-link px-0" href="#">COVID-19... Working from home....</a>
                 </li>
-
-                @endif
-                @endforeach
+                <li class="nav-item">
+                  <a class="nav-link px-0" href="#">COVID-19... Working from home....</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link px-0" href="#">COVID-19... Working from home....</a>
+                </li>
               </ul>
 
         </div>

@@ -2,11 +2,12 @@
 
 @section('content')
 
+<div class="slider-wrapper">
 		<div class="sleekslider" id="home">
 			<!-- Slider Pages -->
 			<div class="slide bg-1">
 				<div class="slide-container">
-					<div class="slide-content text-center text-light">
+					<div class="slide-content">
 						<h1 class="mb-4">H&R Block Tax Software</h1>
 						<p class="wow fadeInLeft" data-wow-duration=".8s" data-wow-delay=".2s">Perfect Business Startup</p>
 					</div>
@@ -14,7 +15,7 @@
 			</div>
 			<div class="slide bg-2">
 				<div class="slide-container">
-					<div class="slide-content text-center text-light">
+					<div class="slide-content">
 						<h1 class="mb-4">H&R Block Tax Software</h1>
 						<p class="wow fadeInLeft" data-wow-duration=".8s" data-wow-delay=".4s">Exclusive Digital Services</p>
 					</div>
@@ -22,7 +23,7 @@
 			</div>
 			<div class="slide bg-3">
 				<div class="slide-container">
-					<div class="slide-content text-center text-light">
+					<div class="slide-content">
 							<h1 class="mb-4">H&R Block Tax Software</h1>
 							<p class="wow fadeInLeft" data-wow-duration=".8s" data-wow-delay=".2s">Perfect Business Startup</p>
 					</div>
@@ -30,7 +31,7 @@
 			</div>
 			<div class="slide bg-4">
 				<div class="slide-container">
-					<div class="slide-content text-center text-light">
+					<div class="slide-content">
 						<h1 class="mb-4">H&R Block Tax Software</h1>
 						<p class="wow fadeInLeft" data-wow-duration=".8s" data-wow-delay=".4s">Exclusive Digital Services</p>
 					</div>
@@ -45,50 +46,23 @@
 				</div>
 			</div>
 
-			<!-- Navigation Arrows with Thumbnails -->
-			<!-- <nav class="nav-split">
-				<a class="prev" href="">
-					<span class="icon-wrap"><svg class="icon" width="22" height="22" viewBox="0 0 64 64"><use xlink:href="#arrow-left" /></svg></span>
-					<div>
-						<h3>test</h3>
-						<img alt="Previous thumb"/>
-					</div>
-				</a>
-				<a class="next" href="">
-					<span class="icon-wrap"><svg class="icon" width="22" height="22" viewBox="0 0 64 64"><use xlink:href="#arrow-right" /></svg></span>
-					<div>
-						<h3>test</h3>
-						<img alt="Next thumb"/>
-					</div>
-				</a>
-			</nav> -->
-
-			<!-- Pagination -->
-			<nav class="pagination">
-				<span class="current"></span>
-				<span></span>
-				<span></span>
-				<span></span>
-				<span></span>
-			</nav>
-
-			<!-- Navigation Tabs -->
-
-		</div>
-      <!--welcome-->
- </div>
+</div>
+</div>
  <!--/about-w3layouts-agile-info-->
 <div class="about-w3layouts-agileinfo">
 	<div class="container">
 		<div class="about-top w3ls-agile row align-items-center">
-			<div class="col-md-6 red-w3l">
+			<div class="col-md-6">
+
+				<div class="red-w3l">
 				<div class="red-w3l-images">
-					<img class="img-responsive" src="{{ url('fornt/images/ab.jpg') }}" alt="">
-					<img class="img-responsive" src="{{ url('fornt/images/ab1.jpg') }}" alt="">
+					<img class="img-responsive" src="{{ url('/public/fornt/images/ab.jpg') }}" alt="">
+					<img class="img-responsive" src="{{ url('/public/fornt/images/ab1.jpg') }}" alt="">
 					<div class="position-w3l"></div>
 				</div>
+				</div>
 			</div>
-			<div class="col-md-6 come">
+			<div class="col-md-6 my-5">
 				<div class="about-wel">
 					<h3 class="title-w3-agileits">Welcome To Our Decline</h3>
 					<p>Masagni dolores eoquie int Basmodi temporant, nicmquam eius, Basmodi temurer sehsMunim.</p>
@@ -97,8 +71,8 @@
 				<div class="steps-wel">
 					<h5>Follow Us For Easy Steps</h5>
 
-					<div class="row">
-					<div class="col-3 w3ls_banner_bottom_grids first-posi-w3l">
+					<div class="d-flex mx-0">
+					<div class="w3ls_banner_bottom_grids first-posi-w3l" style="width:104px;">
 						<div class="w3l_banner_bottom_grid1">
 						    <i class="fa fa-laptop hvr-pulse-shrink" aria-hidden="true"></i>
 						</div>
@@ -110,24 +84,21 @@
 						</div>
 					</div>
 
-					<div class="col-2 col-xs-2 w3ls_banner_bottom_grids">
+					<div class="w3ls_banner_bottom_grids text-center" style="width:65px;">
 						<h6>01</h6>
 						<h6>02</h6>
 						<h6>03</h6>
 					</div>
-					<div class="col-7 w3ls_banner_bottom_grids">
+					<div class="w3ls_banner_bottom_grids">
 						<p>Digital</p>
 						<p>Branding</p>
 						<p>Illustration</p>
 					</div>
 					</div>
 					
-					
-					
-					<div class="clearfix"> </div>
+			
 				</div>
 			</div>
-			<div class="clearfix"> </div>
 		</div>
 	</div>
 </div>
@@ -284,57 +255,30 @@
 				<section class="slider">
 					<div class="flexslider">
 						<ul class="slides">
+							@foreach ($blogs as $blog)
 							<li>
 								<div class="agileits_w3layouts_banner_bottom_grid">
-									<img src="{{ url('fornt/images/g3.jpg') }}" alt=" " class="img-responsive" />
+                                    @if($blog->image != null)
+                                    <img src="{{ url('public/images/',$blog->image) }}" class="img-responsive" />
+                                    @else
+                                    <img src="{{url('public/images/No-image-available-2.jpg')}}" class="img-responsive" style="height: 350px;" />
+                                    @endif
+
 										<div class="blog-info-agileits-w3layouts">
-											<h5><a href="#">Nullam tristique est a elementum pellentesque.</a></h5>
+											<h5><a href="{{url('blog_details',$blog->id)}}">{{$blog->title}}</a></h5>
 											<ul>
-												<li><i class="fa fa-user" aria-hidden="true"></i>Admin</li>
-												<li><i class="fa fa-calendar" aria-hidden="true"></i>2 Days ago</li>
-												<li><i class="fa fa-comments" aria-hidden="true"></i>10 Comments</li>
+												{{-- <li><i class="fa fa-user" aria-hidden="true"></i>Admin</li> --}}
+												<li><i class="fa fa-calendar" aria-hidden="true"></i>{{$blog->created_at}}</li>
+												{{-- <li><i class="fa fa-comments" aria-hidden="true"></i>10 Comments</li> --}}
 											</ul>
-											<p class="para-w3layouts">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis hendrerit lobortis elementum. </p>
+											<p class="para-w3layouts"> {{ str_limit($blog->description , $limit = 150, $end = '....') }}</p>
 											<div class="wthree_more">
-												<a href="#" class="btn btn-primary">Read More</a>
+												<a href="{{url('blog_details',$blog->id)}}" class="btn btn-primary">Read More</a>
 											</div>
 										</div>
 								</div>
 							</li>
-							<li>
-								<div class="agileits_w3layouts_banner_bottom_grid">
-									<img src="{{ url('fornt/images/g2.jpg') }}" alt=" " class="img-responsive" />
-										<div class="blog-info-agileits-w3layouts">
-											<h5><a href="#">Quisque vel eros vitae massa finibus efficitur.</a></h5>
-											<ul>
-												<li><i class="fa fa-user" aria-hidden="true"></i>Admin</li>
-												<li><i class="fa fa-calendar" aria-hidden="true"></i>5 Days ago</li>
-												<li><i class="fa fa-comments" aria-hidden="true"></i>20 Comments</li>
-											</ul>
-											<p class="para-w3layouts">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis hendrerit lobortis elementum. </p>
-											<div class="wthree_more">
-												<a href="#" class="btn btn-primary">Read More</a>
-											</div>
-										</div>
-								</div>
-							</li>
-							<li>
-								<div class="agileits_w3layouts_banner_bottom_grid">
-									<img src="{{ url('fornt/images/ab.jpg') }}" alt=" " class="img-responsive" />
-										<div class="blog-info-agileits-w3layouts">
-											<h5><a href="#">Neque porro quisquam est qui dolorem ipsum.</a></h5>
-											<ul>
-												<li><i class="fa fa-user" aria-hidden="true"></i>Admin</li>
-												<li><i class="fa fa-calendar" aria-hidden="true"></i>10 Days ago</li>
-												<li><i class="fa fa-comments" aria-hidden="true"></i>30 Comments</li>
-											</ul>
-											<p class="para-w3layouts">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis hendrerit lobortis elementum. </p>
-											<div class="wthree_more">
-												<a href="#" class="btn btn-primary">Read More</a>
-											</div>
-										</div>
-								</div>
-							</li>
+                            @endforeach
 						</ul>
 					</div>
 				</section>
@@ -350,10 +294,10 @@
 			</div>
 						<div class="sreen-gallery-cursual">
 
-						       <div id="owl-demo" class="owl-carousel">
+						       <div id="owl-demo" class="flexslider_slides">
 							      <div class="item-owl">
 					                		<div class="test-review">
-						                	  <img src="{{ url('fornt/images/s1.jpg') }}" class="img-responsive" alt=""/>
+						                	  <img src="{{ url('/public/fornt/images/s1.jpg') }}" class="img-responsive" alt=""/>
 											  <h5>Edwards Doe</h5>
 											  <span>Client</span>
 											  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut a diam quis nibh convallis mollis vel nec justo.</p>
@@ -377,7 +321,7 @@
 					                </div>
 					                 <div class="item-owl">
 					                	<div class="test-review">
-						                	  <img src="{{ url('fornt/images/s2.jpg') }}" class="img-responsive" alt=""/>
+						                	  <img src="{{ url('/public/fornt/images/s2.jpg') }}" class="img-responsive" alt=""/>
 											  <h5>Mark Sophia</h5>
 											  <span>Client</span>
 											  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut a diam quis nibh convallis mollis vel nec justo.</p>
@@ -401,7 +345,7 @@
 					                </div>
 					                 <div class="item-owl">
 					                	    <div class="test-review">
-						                	  <img src="{{ url('fornt/images/s3.jpg') }}" class="img-responsive" alt=""/>
+						                	  <img src="{{ url('/public/fornt/images/s3.jpg') }}" class="img-responsive" alt=""/>
 											  <h5>Daniel Nyari</h5>
 											   <span>Client</span>
 											  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut a diam quis nibh convallis mollis vel nec justo.</p>
@@ -425,7 +369,7 @@
 					                </div>
 									 <div class="item-owl">
 					                	    <div class="test-review">
-						                	  <img src="{{ url('fornt/images/s4.jpg') }}" class="img-responsive" alt=""/>
+						                	  <img src="{{ url('/public/fornt/images/s4.jpg') }}" class="img-responsive" alt=""/>
 											  <h5>Michael Amet</h5>
 											    <span>Client</span>
 											  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut a diam quis nibh convallis mollis vel nec justo.</p>
@@ -449,7 +393,7 @@
 					                </div>
 									<div class="item-owl">
 					                	    <div class="test-review">
-						                	  <img src="{{ url('fornt/images/s1.jpg') }}" class="img-responsive" alt=""/>
+						                	  <img src="{{ url('/public/fornt/images/s1.jpg') }}" class="img-responsive" alt=""/>
 											 <h5>John Doe</h5>
 											  <span>Client</span>
 											  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut a diam quis nibh convallis mollis vel nec justo.</p>

@@ -2,7 +2,7 @@
 @section('content')
 
 
-            <div class="card p-4 mb-0">
+            <div class="card mb-0 p-4">
             @include('error_message')
 
             <div class="tax-top-nav">
@@ -56,7 +56,7 @@
                                        <div class="col-sm-4">
                                         <div class="form-group">
                                          <label for="inp12">Social Security number (SSN)</label>
-                                         <input class="ssn form-control" id="ssn" name="ssn"  type="text" placeholder="Social Security number"  value="{{$user_details ? $user_details->ssn : ''}}">
+                                         <input class="ssn form-control" id="ssn" name="ssn"  type="text" placeholder="Social Security number" required value="{{$user_details ? $user_details->ssn : ''}}">
                                         </div>
                                        </div>
 
@@ -69,7 +69,6 @@
 
 
                                     </div>
-                                    
                                 </div>
 
                                 <div class="tab2 next_question">
@@ -80,16 +79,16 @@
                                     </div>
                                 </div>
 
-                                <div class="tab2" oninput="this.className = ''">
+                                <div class="tab2">
                                     <center>
                                         <img src="{{ url('images/citizenship.png')}}" class="image_top">
                                      <h3 class="title">Were you a U.S. citizen in 2019? </h3>
                                       <span class="sub_litle">This is what you came here for, after all.</span>
                                       <div class="middle">
-                                        <label><input type="radio" name="us_citizen_in_2019" value="yes" id="us_citizen_in_2019" checked {{$user_details ? $user_details->us_citizen_in_2019 == 'yes' ? 'checked': '' : ''}}/>
+                                        <label><input type="radio" name="us_citizen_in_2019" value="yes" {{$user_details ? $user_details->us_citizen_in_2019 == 'yes' ? 'checked': '' : ''}}/>
                                         <div class="front-end box"><span>Yes</span></div>
                                       </label>
-                                        <label><input type="radio" name="us_citizen_in_2019" value="no" id="us_citizen_in_2019"{{$user_details ? $user_details->us_citizen_in_2019 == 'no' ? 'checked': '' : ''}}/>
+                                        <label><input type="radio" name="us_citizen_in_2019" value="no" {{$user_details ? $user_details->us_citizen_in_2019 == 'no' ? 'checked': '' : ''}}/>
                                          <div class="back-end box"><span>No</span></div>
                                        </label>
                                       </div>
@@ -101,7 +100,7 @@
                                         <img src="{{ url('images/citizenship.png')}}" class="image_top">
                                      <h3 class="title">Is that person actually claiming you on their return? </h3>
                                         <div class="middle">
-                                            <label><input type="radio" name="person_actually_claiming" value="yes" checked {{$user_details ? $user_details->person_actually_claiming == 'yes' ? 'checked': '' : ''}}/>
+                                            <label><input type="radio" name="person_actually_claiming" value="yes" {{$user_details ? $user_details->person_actually_claiming == 'yes' ? 'checked': '' : ''}}/>
                                             <div class="front-end box"><span>Yes</span></div>
                                           </label>
 
@@ -118,7 +117,7 @@
                                      <h3 class="title">Can someone else claim you as a dependent?</h3>
                                      <span class="sub_litle">This helps us know what tax breaks we can get you.</span>
                                         <div class="middle">
-                                            <label><input type="radio" name="claim_you_dependent" value="yes" checked {{$user_details ? $user_details->claim_you_dependent == 'yes' ? 'checked': '' : ''}}/>
+                                            <label><input type="radio" name="claim_you_dependent" value="yes" {{$user_details ? $user_details->claim_you_dependent == 'yes' ? 'checked': '' : ''}}/>
                                             <div class="front-end box"><span>Yes</span></div>
                                           </label>
                                             <label><input type="radio" name="claim_you_dependent" value="no" {{$user_details ? $user_details->claim_you_dependent == 'yes' ? 'checked': '' : ''}}/>
@@ -133,7 +132,7 @@
                                         <img src="{{ url('images/citizenship.png')}}" class="image_top">
                                      <h3 class="title">Did you live in the U.S for more than six months in 2019?</h3>
                                         <div class="middle">
-                                            <label><input type="radio" name="live_us_more_than_six" value="yes" checked {{$user_details ? $user_details->live_us_more_than_six == 'yes' ? 'checked': '' : ''}}/>
+                                            <label><input type="radio" name="live_us_more_than_six" value="yes" {{$user_details ? $user_details->live_us_more_than_six == 'yes' ? 'checked': '' : ''}}/>
                                             <div class="front-end box"><span>Yes</span></div>
                                           </label>
                                             <label><input type="radio" name="live_us_more_than_six" value="no" {{$user_details ? $user_details->live_us_more_than_six == 'yes' ? 'checked': '' : ''}}/>
@@ -148,7 +147,7 @@
                                         <img src="{{ url('images/citizenship.png')}}" class="image_top">
                                          <h3 class="title">Have you been affected by a federal disaster?</h3>
                                         <div class="middle">
-                                            <label><input type="radio" name="federal_disaster" value="yes" checked {{$user_details ? $user_details->federal_disaster == 'yes' ? 'checked': '' : ''}}/>
+                                            <label><input type="radio" name="federal_disaster" value="yes" {{$user_details ? $user_details->federal_disaster == 'yes' ? 'checked': '' : ''}}/>
                                             <div class="front-end box"><span>Yes</span></div>
                                           </label>
                                             <label><input type="radio" name="federal_disaster" value="no" {{$user_details ? $user_details->federal_disaster == 'yes' ? 'checked': '' : ''}}/>
@@ -163,7 +162,7 @@
                                         <img src="{{ url('images/citizenship.png')}}" class="image_top">
                                            <h3 class="title">Were you a student in 2019?</h3>
                                         <div class="middle">
-                                            <label><input type="radio" name="student_2019" value="yes" checked {{$user_details ? $user_details->student_2019 == 'yes' ? 'checked': '' : ''}}/>
+                                            <label><input type="radio" name="student_2019" value="yes" {{$user_details ? $user_details->student_2019 == 'yes' ? 'checked': '' : ''}}/>
                                             <div class="front-end box"><span>Yes</span></div>
                                           </label>
                                             <label><input type="radio" name="student_2019" value="no" {{$user_details ? $user_details->student_2019 == 'yes' ? 'checked': '' : ''}}/>
@@ -178,7 +177,7 @@
                                         <img src="{{ url('images/citizenship.png')}}" class="image_top">
                                              <h3 class="title">Were you a full- or part-time student?</h3>
                                         <div class="middle">
-                                            <label><input type="radio" name="student_type" value="yes" checked {{$user_details ? $user_details->student_type == 'yes' ? 'checked': '' : ''}}/>
+                                            <label><input type="radio" name="student_type" value="yes" {{$user_details ? $user_details->student_type == 'yes' ? 'checked': '' : ''}}/>
                                             <div class="front-end box"><span>Yes</span></div>
                                           </label>
 
@@ -194,7 +193,7 @@
                                         <img src="{{ url('images/citizenship.png')}}" class="image_top">
                                               <h3 class="title">Are you that person’s qualifying child?</h3>
                                         <div class="middle">
-                                            <label><input type="radio" name="qualifying_child" value="yes" checked {{$user_details ? $user_details->qualifying_child == 'yes' ? 'checked': '' : ''}}/>
+                                            <label><input type="radio" name="qualifying_child" value="yes" {{$user_details ? $user_details->qualifying_child == 'yes' ? 'checked': '' : ''}}/>
                                             <div class="front-end box"><span>Yes</span></div>
                                           </label>
                                             <label><input type="radio" name="qualifying_child" value="no" {{$user_details ? $user_details->qualifying_child == 'yes' ? 'checked': '' : ''}}/>
@@ -207,14 +206,14 @@
 
 
                                 
-                                <div class="mt-4 text-right">
-                                    <button type="button" class="prevBtn btn btn-secondary mr-2" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
-                                    <button type="button" class="nextBtn btn btn-primary" id="nextBtn" onclick="nextPrev(1)">Next</button>
+                                <div class="mt-4 text-center">
+                                    <button type="button" class="btn btn-secondary mr-2" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+                                    <button type="button" class="btn btn-primary" id="nextBtn" onclick="nextPrev(1)">Next</button>
                                 </div>
                                 
 
                                 <!-- Circles which indicates the steps of the form: -->
-                                <div class="mt-3 text-center">
+                                <div style="text-align:center;margin-top:40px;">
                                 <span class="step"></span><span class="step"></span><span class="step"></span><span class="step"></span>
                                 <span class="step"></span><span class="step"></span><span class="step"></span><span class="step"></span>
                                 <span class="step"></span><span class="step"></span>
@@ -224,13 +223,16 @@
 
                             <div id="Address" class="tabcontent2 p-6">
                                 
-                                <form action="{{url('post_address',$users->id)}}" class="form-row" method="POST">
+                                <form action="{{url('post_address',$users->id)}}" method="POST" class="form-row">
 
-                                <div class="col-sm-12">
+                                <div class="text-center mb-4">
                                     <img src="{{ url('images/Address.png')}}" style="
                                     height: 104px;">
                                  <h3 class="mb-4"> What's your current address?</h3>
+
                                 </div>
+
+                        
 
                                  <div class="col-sm-8">
                                     <div class="form-group">
@@ -267,9 +269,9 @@
                                     </div>
                                    </div>
 
-                                <div class="col-sm-12 text-right">
-                                   <button type="submit" name="submit" value="Submit" class="btn btn-primary">Submit</button>
-                                </div>
+                                   <div class="text-right col-md-12">
+                                       <button type="submit" name="submit" value="Submit" class="btn btn-primary">Submit</button>
+                                    </div>
 
                                    
                                 </form>
@@ -278,11 +280,12 @@
 
                             <div id="Summary" class="tabcontent2 p-6 text-center">
                                 
-                                    <h3 class="mb-3">We've enjoyed getting to know you, himahh!</h3>
-                                    <span class="sub_litle">Here's everything you've told us so far.</span>
+                                    <h3 class="mb-4">We've enjoyed getting to know you, himahh!</h3>
+                                    <div class="mb-4">Here's everything you've told us so far.</div>
 
-                                <hr/>
+                                    <hr/>
 
+                                    
                                 <span class="bold_title"> Your Household  <i class="fa fa-pencil-square-o fafaicon" aria-hidden="true"  onclick="openCity(event, 'Your_Household')"></i><br><br></span>
                                 <span class="lbl_cls">  Name: </span> <span class="lbl2_cls">{{isset($users) ? $users->name : ''}}</span><br>
                                 <span class="lbl_cls"> Phone :</span><span class="lbl2_cls">{{isset($users) ? $users->phone : ''}}</span><br>
@@ -290,11 +293,9 @@
                                 <span class="lbl_cls"> SSN :</span><span class="lbl2_cls">{{isset($user_details) ? $user_details->ssn : ''}}</span><br>
                                 <span class="lbl_cls"> Marital status:</span><span class="lbl2_cls">{{isset($user_details) ? $user_details->marital_status : ''}}</span><br><br>
 
-
-                                
-                                @if(isset($user_details))
                                 <hr/>
 
+                                @if(isset($user_details))
                                 <span class="qus_cls">Were you a U.S. citizen in 2019? </span>
                                 <span class="ans_cls"></span>{{$user_details->us_citizen_in_2019}}<br><br>
 
@@ -337,6 +338,8 @@
                                 <span class="lbl_cls"> Apt: </span><span class="lbl2_cls">{{isset($user_details) ? $user_details->atp : ''}}</span><br>
                                 <span class="lbl_cls"> In care of: </span><span class="lbl2_cls">{{isset($user_details) ? $user_details->ico : ''}}</span><br>
                                 <hr class="hr_line">
+
+                            
                             </div>
                 </div>
 
@@ -386,7 +389,6 @@
                             @endforeach
                         </div>
                          @endif
-                         
                     </div>
                 </div>
 
@@ -396,12 +398,16 @@
                         <button class="tablinks2" onclick="openCity(event, 'income_document')" id="defaultOpen33">Summary</button>
                     </div>
                     <div id="upload_income" class="tabcontent2 text-center p-6">
-                        
+                
                             <h3 class="mb-4"> Now, let’s upload your Income Document</h3>
                             
+                
+
+                
                             <form action="{{ route('users.deductionDocument',3) }}" method="POST" enctype="multipart/form-data" class="dropzone" id='image-upload'>
                                 @csrf
                                 <div class="dz-message" data-dz-message><span>Drag and drop all of your Income.</span></div>
+
                             <input type="hidden" value="{{$users->id}}" name="userId">
                             </form>
                         
@@ -433,7 +439,6 @@
                             @endforeach
                             </div>
                          @endif
-                       
 
                     </div>
                 </div>
@@ -446,7 +451,7 @@
                     </div>
                     <div id="upload_credits" class="tabcontent2 p-6 text-center">
                         
-                            <h3 class="mb-4">1098-T Tuition and expenses for college and other higher education</h3>
+                            <h3>1098-T Tuition and expenses for college and other higher education</h3>
                         
                             <form action="{{ route('users.deductionDocument',2) }}" method="POST" enctype="multipart/form-data" class="dropzone" id='image-upload'>
                                 @csrf
@@ -458,7 +463,7 @@
 
                     <div id="credits_document" class="tabcontent2 p-6">
                         <p>Here is All Deduction Upload Document List:</p>
-                        
+                    
                         @if(count($userDocuments) > 0)
                          <div class="form-row images-row">
                             @foreach($userDocuments as $userDocument)
@@ -486,17 +491,16 @@
                             @endforeach
                         </div>
                          @endif
-                       
 
                     </div>
                 </div>
 
 
-                <div id="About" class="tabcontent p-6">
+                <div id="About" class="tabcontent">
                     <div class="progressclg">
 
                         <input type="hidden" name="userId" id="userId" value="{{$users->id}}">
-                        <div class="">
+                        <div>
                             <div class="form-group">
                              <label for="inp12">Document Status</label>
 
@@ -526,7 +530,7 @@
 
                            @if($userRoleName[0] == 'customer')
                               @if(!($userDocuments->isEmpty()))
-                                <div class="">
+                                <div>
                                     <div class="form-group">
                                         <div class="progress">
 
@@ -564,7 +568,6 @@
 
 
             </div>
-       
 @endsection
 
 
@@ -602,37 +605,36 @@
 var userId  =$("#userId").val();
      Dropzone.options.imageUpload ={
         maxFilesize:1,
-        acceptedFiles: ".jpeg,.jpg,.png,.gif,.pdf,.doc",
-        addRemoveLinks: true,
-        dictRemoveFile: 'Remove file',
-                    init: function () {
-                    this.on("removedfile", function (file) {
-                        $.post({
-                            url: '<?php echo url('file_remove') ?>',
-                            data: {id: file.name, _token: $('[name="_token"]').val(),userId:userId},
-                            dataType: 'json',
-                            success: function (data) {
-                                swal(data)
-                             console.log(data);
-                            }
-                        });
-                    });
-                },
+        acceptedFiles: ".jpeg,.jpg,.png,.gif,.pdf",
            };
 
 </script>
-
-
-
 
 <script type="text/javascript">
 
 var userRoleName    ='<?php echo $userRoleName[0] ?>';
 
 if(userRoleName == 'staff'){
-    document.getElementById("defaultOpen22").click();
+    window.onload = function () {
+        startTab();
+    };
+
+    function startTab() {
+        document.getElementById("defaultOpen22").click();
+
+
+    }
+
+
 }else{
-    document.getElementById("defaultOpen2").click();
+    window.onload = function () {
+        startTab2();
+    };
+
+    function startTab2() {
+        document.getElementById("defaultOpen2").click();
+    }
+
 }
 document.getElementById("defaultOpen").click();
 function openPage(pageName,elmnt,color) {

@@ -4,7 +4,7 @@
 <div class="card p-4 mb-0">
 
 
-            <h3 class="d-flex align-items-center justify-content-between">
+            <h3 class="d-flex align-items-center justify-content-between flex-wrap">
                     @role('admin')
                        User List
                     @else
@@ -22,7 +22,7 @@
                                 <option value="ssn">SSN</option>
                             </select> -->
                 
-                            <input type="search" class="form-control mr-2" id="gsearch" name="gsearch" placeholder="Serach" style="padding: 10px;" required>
+                            <input type="search" class="form-control mr-2" id="gsearch" name="gsearch" placeholder="Search" style="padding: 10px;" required>
                             <input type="submit" class="btn btn-primary">
                         
                         </form>

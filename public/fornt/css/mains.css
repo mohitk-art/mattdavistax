@@ -327,3 +327,122 @@ button.navbar-toggle {
 		display: block;
 	}
 }
+
+
+
+.sleekslider .slide {
+    height: 800px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -webkit-background-size: cover;
+	background-size: cover;
+	display: flex;
+	align-items: center;
+}
+
+.slide-container{
+	width:100%;
+	margin: auto;
+	max-width: 600px;
+	color: #fff;
+	text-align: center;
+}
+
+.slide-content p {
+    color: white;
+    font-weight: 300;
+    font-size: 30px;
+    background: rgba(208, 210, 218, 0.22);
+    padding: 0px 15px;
+    border: none;
+    letter-spacing: 11px;
+}
+
+.sleekslider .bg-1 {
+    background-image: url("../images/wallhaven-27263.jpg");
+}
+
+.sleekslider .bg-2 {
+    background-image: url("../images/wallhaven-16270.jpg");
+}
+
+.sleekslider .bg-3 {
+    background-image: url("../images/wallhaven-12018.jpg");
+}
+
+.sleekslider .bg-4 {
+    background-image: url("../images/wallhaven-3178.jpg");
+}
+
+.sleekslider .bg-5 {
+    background-image: url("../images/wallhaven-10742.jpg");
+}
+
+.sleekslider .slick-dots{
+bottom: 36px;
+}
+
+.sleekslider .slick-dots li button:before{
+	color:#fff !important;
+	font-size: 12px !important;
+}
+
+.flexslider_slides .slick-prev{
+	left:30%;
+}
+
+.flexslider_slides .slick-prev {
+    left: 33%;
+}
+
+.flexslider_slides .slick-next {
+    right: 33%;
+}
+
+.flexslider_slides .slick-arrow{
+	width:auto !important;
+	height: auto !important;
+	z-index: 9999;
+}
+
+
+.flexslider_slides .slick-arrow::before ,.flexslider_slides .slick-arrow::after{
+	font-size: 33px;
+}
+
+
+.flexslider_slides .slick-dots{
+	bottom: -40px;
+}
+
+.flexslider_slides .slick-dots li button:before{
+	color:#fff !important;
+	font-size: 12px !important;
+}
+
+.alert .font-medium{
+	font-size: 14px !important;
+	  font-weight: 600 !important;
+  }
+  
+  .alert ul{
+	font-size: 14px !important;
+	list-style: none !important;
+  }
+
+
+@media(max-width:768px){
+	.flexslider_slides .slick-prev {
+		left: 4%;
+	}
+	
+	.flexslider_slides .slick-next {
+		right: 4%;
+	}
+
+	.sleekslider .slide{
+		height: 500px;
+	}
+}

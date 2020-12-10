@@ -17,13 +17,14 @@ Smartphone Compatible web template, free web designs for Nokia, Samsung, LG,sony
 <!--Custom-Theme-files-->
 <link href="{{ url('fornt/css/font-awesome.css') }}" rel="stylesheet">
 <link rel="stylesheet" href="{{ url('fornt/css/flexslider.css') }}" type="text/css" media="screen" property="" /><!--Blog slider-->
-<link rel="stylesheet" href="{{ url('fornt/css/slider.css') }}">
+<!-- <link rel="stylesheet" href="{{ url('fornt/css/slider.css') }}"> -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
 <link href="{{ url('fornt/css/color.css') }}" rel='stylesheet' type='text/css' />
-<link href="{{ url('fornt/css/styles.css') }}" rel='stylesheet' type='text/css' />
-<link href="{{ url('fornt/css/main.css') }}" rel='stylesheet' type='text/css' />
+<link href="{{ url('fornt/css/style1.css') }}" rel='stylesheet' type='text/css' />
+<link href="{{ url('fornt/css/mains.css') }}" rel='stylesheet' type='text/css' />
 <link href="{{ url('fornt/css/responsive.css') }}" rel='stylesheet' type='text/css' media="(max-width:991px)" />
+<link href="{{ url('fornt/css/owl.carousel.css') }}" rel="stylesheet">
 </head>
 	<body>
         @include('fornt_layouts.menu')
@@ -37,7 +38,7 @@ Smartphone Compatible web template, free web designs for Nokia, Samsung, LG,sony
 
 <!-- JavaScripts -->
 <script type="text/javascript" src="{{ url('fornt/js/jquery-2.1.4.min.js') }}"></script>
-<script type="text/javascript" src="{{ url('fornt/js/sleekslider.js') }}"></script>
+<!-- <script type="text/javascript" src="{{ url('fornt/js/sleekslider.js') }}"></script> -->
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <script type="text/javascript" src="{{ url('fornt/js/app.js') }}"></script>
 <!--/script-->
@@ -63,6 +64,8 @@ Smartphone Compatible web template, free web designs for Nokia, Samsung, LG,sony
 <!-- //flexSlider -->
 <script type="text/javascript" src="{{ url('fornt/js/move-top.js') }}"></script>
 <script type="text/javascript" src="{{ url('fornt/js/easing.js') }}"></script>
+<script src="{{ url('fornt/js/bootstrap.js') }}"></script>
+<script src="{{ url('fornt/js/owl.carousel.js') }}"></script>
 <script type="text/javascript">
 			jQuery(document).ready(function($) {
 				$(".scroll").click(function(event){
@@ -74,8 +77,7 @@ Smartphone Compatible web template, free web designs for Nokia, Samsung, LG,sony
 
 <!--Custom-Theme-files-->
 <!-- required-js-files-->
-							<link href="{{ url('fornt/css/owl.carousel.css') }}" rel="stylesheet">
-							    <script src="{{ url('fornt/js/owl.carousel.js') }}"></script>
+							    
 							        <script>
 							    $(document).ready(function() {
 							      $("#owl-demo").owlCarousel({
@@ -113,13 +115,38 @@ Smartphone Compatible web template, free web designs for Nokia, Samsung, LG,sony
 								</script>
 
 <script>
-	$('.sleekslider1').slick();
+	$('.sleekslider').slick({
+		dots: true,
+		infinite: false,
+		speed: 300,
+		arrows: false
+	});
+
+
+	$('.flexslider_slides').slick({
+		dots: true,
+  infinite: false,
+  speed: 300,
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  responsive: [
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        infinite: true,
+        dots: true
+      }
+    }
+	]
+	});
+	
 </script>
 
 
 		<a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
-<!-- for bootstrap working -->
-		<script src="{{ url('fornt/js/bootstrap.js') }}"></script>
+
 
 		<!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script> -->

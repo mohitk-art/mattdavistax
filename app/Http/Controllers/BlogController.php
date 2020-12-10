@@ -127,18 +127,22 @@ class BlogController extends Controller
 
     public function bloglists(Request $request)
     {
-        $blogs = Blog::get();
+        if($request->post()){
+            $blogs = Blog::where('title', 'LIKE', '%'.$request->search.'%')->get();
+        }else{
+            $blogs = Blog::get();
+        }
 
-        return view('blogs.blog_lists',compact('blogs'))
-            ->with('i', (request()->input('page', 1) - 1) * 5);
+        return view('blogs.blog_lists',compact('blogs'));
     }
-
 
     public function blogDetails(Request $request, $id)
     {
         $blog_details = Blog::where('id',$id)->first();
-
-        return view('blogs.blog_details',compact('blog_details'));
+        $blogs = Blog::whereNotIn('id',[$id])->paginate(5);
+        return view('blogs.blog_details',compact('blog_details','blogs'));
     }
+
+
 
 }

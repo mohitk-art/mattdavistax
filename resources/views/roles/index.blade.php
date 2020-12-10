@@ -3,7 +3,7 @@
 
 @section('content')
 <div class="card p-4 mb-0">
-    <h3 class="d-flex align-items-center justify-content-between">
+    <h3 class="d-flex align-items-center justify-content-between flex-wrap">
         Role Management
 
         @can('role-create')

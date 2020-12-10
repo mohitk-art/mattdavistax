@@ -10,10 +10,23 @@
   color:#fff !important;
 }
 
+.form-control{
+  height: auto;
+}
+
 
 .search-form{
   display: inline-flex;
   align-items: center;
+}
+
+.table th{
+  background:#000;
+  color:#fff;
+}
+
+.table tr:nth-child(even){
+    background: #f5f5f5;
 }
 
 
@@ -833,4 +846,34 @@ display: contents;
 
 table td form{
   display: inline;
+}
+
+.qus_cls {
+  font-weight: 600;
+  font-size: 16px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.ans_cls {
+  display: block;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+
+.lbl_cls {
+  font-weight: 600;
+  margin-right: 12px;
+  display: inline-block;
+  text-align: right;
+}
+
+.tax-top-nav{
+  display: flex;
+  align-items: center;
+}
+
+.tax-top-nav > *{
+  width:100%;
 }

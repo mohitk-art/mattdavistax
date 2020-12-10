@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="card p-4 mb-0">
-    <h3 class="d-flex align-items-center justify-content-between">
+    <h3 class="d-flex align-items-center flex-wrap justify-content-between">
         Blog List
         <a class="btn btn-primary" href="{{ route('blogs.create') }}"> Create New blog</a>
     </h3>

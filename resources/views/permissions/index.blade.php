@@ -4,18 +4,18 @@
 
     <div class="card p-4 mb-0">
 
-    <h3 class="d-flex align-items-center justify-content-between">
-    Permissions Management
-    {{-- <a href="{{ route('users.index') }}" class="btn btn-default pull-right">Users</a> --}}
+    <h3 class="d-flex align-items-center justify-content-between flex-wrap">
+        Permission Management
+        {{-- <a href="{{ route('users.index') }}" class="btn btn-default pull-right">Users</a> --}}
     <!-- <a href="{{ route('roles.index') }}" class="btn btn-success pull-right role_btn">Roles</a> -->
-    <a href="{{ URL::to('permissions/create') }}" class="btn btn-primary">Add Permission</a>
+        <a href="{{ URL::to('permissions/create') }}" class="btn btn-primary">Add Permission</a>
     </h3>
 
     <div class="table-responsive">
         <table class="table table-bordered mb-0">
                 <tr>
                     <th class="table_label">No</th>
-                    <th class="table_label">Permissions</th>
+                    <th class="table_label">Permission</th>
                     <th class="table_label" width="200">Action</th>
                 </tr>
             <tbody>
